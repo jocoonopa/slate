@@ -64,11 +64,16 @@ identity_no | false | NULL | String | 身分證
 
 **CzCol**
 
+此欄位為包含以下格式之陣列
+
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
 id | true | NULL | Number| 動態欄位的 id
 op | true | NULL | String | 比較方式: '>', '<', '=', '>=', '<=', '<>', 'in', 'not_in', 'is_null', 'is_not_null'
 val | false | NULL | Number|String | 欲比對的值
+
+**範例**
+`[{"id":1, "op":">", "val": 10}, {"id":1, "op":"<", "val": 20}]`
 
 ## 新增客戶
 
