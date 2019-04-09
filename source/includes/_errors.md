@@ -1,8 +1,8 @@
-# Errors
+# 錯誤
 
-The FirstLine API uses the following error codes:
+FirstLine API 使用以下錯誤代碼
 
-Error Code | Meaning
+錯誤代碼 | 敘述
 ---------- | -------
 400 | Bad Request -- Your request is invalid.
 401 | Unauthorized -- Your API key is wrong.
