@@ -16,7 +16,7 @@ includes:
   - emails
   - errors
 
-search: true
+search: false
 ---
 
 # 介紹
