@@ -9,6 +9,13 @@ curl -X GET
     https://{API_HOST}/api/v1/contact?xxxx
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#contact">`客戶`陣列</a>
+meta | Object | Pagination meta
+
 > 回傳的 json 格式
 
 ```json
@@ -86,6 +93,10 @@ curl -X POST
     https://{API_HOST}/api/v1/contact?xxxx
 ```
 
+### Response
+
+<a href="#contact">`客戶`</a>
+
 > 回應的 json 格式
 
 ```json
@@ -135,6 +146,10 @@ curl -X PUT
     '{"first_name":"First","last_name":"Line"}'
     https://{API_HOST}/api/v1/contact/2
 ```
+
+### Response
+
+<a href="#contact">`客戶`</a>
 
 > 回應的 json 格式
 

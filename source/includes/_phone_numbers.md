@@ -13,6 +13,13 @@ curl -X POST
     https://{API_HOST}/api/v1/phone-number
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#phone-number">`電話號碼`陣列</a>
+meta | Object | Pagination meta
+
 > 回傳 json 格式
 
 ```json
@@ -51,6 +58,10 @@ curl -X PUT
     '{"type": 2, "number": "0939888999", "extension": ""}'
     https://{API_HOST}/api/v1/phone-number/1
 ```
+
+### Response
+
+<a href="#phone-number">`電話號碼`</a>
 
 > 回傳 json 格式
 

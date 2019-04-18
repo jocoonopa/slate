@@ -10,6 +10,13 @@ curl -X GET
     "https://{API_HOST}/api/v1/email-contact?contact_id=1"
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#email">`電子信箱`陣列</a>
+meta | Object | Pagination meta
+
 > 回傳 json 格式
 
 ```json
@@ -92,6 +99,10 @@ curl -X POST
     '{"contact_id":1,"address":"loren18@ortiz.biz","name":"Theresia Zieme"}'
     https://{API_HOST}/api/v1/email-contact
 ```
+
+### Response
+
+<a href="#email">`電子信箱`</a>
 
 > 回傳 json 格式
 
@@ -187,7 +198,6 @@ contact_id | true | NULL | Number | 客戶的id
 address | true | NULL | String | 電子信箱地址
 name | false | NULL | String | 電子信箱自定義名稱
 description | false | NULL | String | 電子信箱自定義描述
-
 
 ## 刪除電子信箱
 

@@ -2,7 +2,7 @@
 
 <aside class="notice">使用此 api 前，您必須先行索取 api 專用帳號密碼以及註冊 IP 白名單</aside>
 
-FirstLine 的 api 請求皆會取得後以下面兩種方式任一驗證 `權杖` (access token)
+FirstLine 的 api 請求皆會取得後以下面兩種方式任一驗證 `權杖` **(access token)**
 
 **Authorization header**
 `Authorization: Bearer eyJhbGciOiJIUzI1NiI...`
@@ -19,6 +19,14 @@ curl -X POST
     -H "Content-Type: application/json" -d '{"name":"your_username","password":"your_password"}'
     https://{API_HOST}/api/v1/auth
 ```
+
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+access_token | String | 權杖
+token_type | String | 類型，可忽視
+expires_in | Number | 過期時間
 
 > 回傳 json 格式
 

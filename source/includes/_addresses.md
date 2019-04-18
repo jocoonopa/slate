@@ -10,6 +10,13 @@ curl -X GET
     "https://{API_HOST}/api/v1/country?per_page=3"
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#country">`國家`陣列</a>
+meta | Object | Pagination meta
+
 > 回傳 json 格式
 
 ```json
@@ -51,6 +58,13 @@ curl -X GET
     -H "Content-Type: application/json"
     "https://{API_HOST}/api/v1/state?per_page=3"
 ```
+
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#state">`縣市`陣列</a>
+meta | Object | Pagination meta
 
 > 回傳 json 格式
 
@@ -119,6 +133,13 @@ curl -X GET
     -H "Content-Type: application/json"
     "https://{API_HOST}/api/v1/city?per_page=3"
 ```
+
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#city">`區`陣列</a>
+meta | Object | Pagination meta
 
 > 回傳 json 格式
 
@@ -250,6 +271,10 @@ curl -X PUT
     '{"address": "仁愛路一段"}'
     https://{API_HOST}/api/v1/address/1
 ```
+
+### Response
+
+<a href="#address">`地址`</a>
 
 > 回傳 json 格式
 

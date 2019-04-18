@@ -9,6 +9,13 @@ curl -X GET
     -H "Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..." https://{API_HOST}/api/v1/cz-col
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#cz-col">`動態欄位`陣列</a>
+meta | Object | Pagination meta
+
 > 回傳 json 格式
 
 ```json
@@ -57,6 +64,10 @@ per_page | false | 15 | Number | 每頁呈現多少筆
 curl -X GET
     -H "Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..." https://{API_HOST}/api/v1/contact/1/cz-col
 ```
+
+### Response
+
+<a href="#cz-col">`動態欄位`</a>
 
 > 回傳 json 格式
 
@@ -123,8 +134,11 @@ curl -X PUT
     https://{API_HOST}/api/v1/contact/1/cz-col/1
 ```
 
-> 回傳 json 格式
+### Response
 
+<a href="#cz-col">`動態欄位`</a>
+
+> 回傳 json 格式
 
 ```json
 {
