@@ -14,6 +14,9 @@ includes:
   - phone_numbers
   - addresses
   - emails
+  - tickets
+  - webhooks
+  - ressources
   - errors
 
 search: false
