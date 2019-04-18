@@ -16,36 +16,8 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | 包含工單物件的陣列，工單物件的屬性說明請參考下方表格
+data | Array of objects | <a href="#ticket">`工單`陣列</a>
 meta | Object | Pagination meta
-
-#### 工單物件
-
-Property | Type | Description
--------- | ---- | -----------
-id | Number | 工單的 id
-subject | String | 工單的標題
-content | String | 工單的內容
-due_at | Datetime | 工單的到期時間
-status | Number | 工單狀態 < 0: 待處理 1: 處理中 2: 已解決 3: 已關閉 >
-status_memo | String |
-priority | Number |
-contact | Object |
-contact_id | Number |
-sub_category | Object |
-sub_category_id | Number |
-creater | Object |
-handler_id | Number |
-handler | Object |
-interact_collections | Array of objects |
-sponsor_id | Number |
-sponsor | Object |
-created_at | Datetime |
-updated_at | Datetime |
-termination_code_id | Number |
-termination_code | Object |
-category | Object |
-category_id | Number |
 
 > 回傳 json 格式
 
@@ -453,6 +425,10 @@ curl -X POST
     "https://{API_HOST}/api/v1/ticket"
 ```
 
+### Response
+
+<a href="#ticket">請參考`工單`回應格式</a>
+
 > 回傳 json 格式
 
 ```json
@@ -546,6 +522,10 @@ curl -X GET
     "https://{API_HOST}/api/v1/ticket/1"
 ```
 
+### Response
+
+<a href="#ticket">請參考`工單`回應格式</a>
+
 > 回傳 json 格式
 
 ```json
@@ -629,6 +609,10 @@ curl -X PUT
     '{"subject":"修改後的標題"}'
     "https://{API_HOST}/api/v1/ticket/1"
 ```
+
+### Response
+
+<a href="#ticket">請參考`工單`回應格式</a>
 
 > 回傳 json 格式
 
@@ -759,6 +743,13 @@ curl -X GET
     -H "Content-Type: application/json"
     "https://{API_HOST}/api/v1/employee"
 ```
+
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#employee">`員工`陣列</a>
+meta | Object | Pagination meta
 
 > json
 
@@ -915,6 +906,13 @@ curl -X GET
     "https://{API_HOST}/api/v1/sponsor"
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#sponsor">`業主`陣列</a>
+meta | Object | Pagination meta
+
 > json
 
 ```json
@@ -952,6 +950,13 @@ curl -X GET
     -H "Content-Type: application/json"
     "https://{API_HOST}/api/v1/ticket-termination-code"
 ```
+
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#ticket-termination-code">`工單狀態細項`陣列</a>
+meta | Object | Pagination meta
 
 ### Response
 
@@ -1057,6 +1062,13 @@ curl -X GET
     "https://{API_HOST}/api/v1/category"
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#category">`主分類`陣列</a>
+meta | Object | Pagination meta
+
 > json 回傳格式
 
 ```json
@@ -1160,6 +1172,13 @@ curl -X GET
     "https://{API_HOST}/api/v1/subcategory"
 ```
 
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#sub-category">`子分類`陣列</a>
+meta | Object | Pagination meta
+
 > json 回傳格式
 
 ```json
@@ -1262,10 +1281,4 @@ category_id | false | Number | 所屬的主分類id
 
 ### Http Request
 `GET https://{API_DOMAIN}/api/v1/subcategory`
-
-
-
-
-
-
 
