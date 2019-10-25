@@ -12,6 +12,7 @@ FirstLine API 使用以下錯誤代碼
 406 | Not Acceptable -- You requested a format that isn't json.
 410 | Gone -- The kitten requested has been removed from our servers.
 418 | I'm a teapot.
+419 | Sesstion expired.
 422 | Unprocessable Entity.
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.

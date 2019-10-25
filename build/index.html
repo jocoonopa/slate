@@ -221,16 +221,10 @@
             <a href="#99477b1e8e" class="toc-h1 toc-link" data-title="驗證">驗證</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#ed1a400c59" class="toc-h2 toc-link" data-title="取得權杖">取得權杖</a>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="Http Request">Http Request</a>
                   </li>
                   <li>
-                    <a href="#cfe5639a1b" class="toc-h2 toc-link" data-title="刷新權杖">刷新權杖</a>
-                  </li>
-                  <li>
-                    <a href="#7febe3c566" class="toc-h2 toc-link" data-title="註銷權杖">註銷權杖</a>
-                  </li>
-                  <li>
-                    <a href="#9672717e1a" class="toc-h2 toc-link" data-title="取得目前使用者資訊">取得目前使用者資訊</a>
+                    <a href="#post-parameters" class="toc-h2 toc-link" data-title="Post Parameters">Post Parameters</a>
                   </li>
               </ul>
           </li>
@@ -444,55 +438,17 @@
         <h1 id='6b60b8fdb4'>介紹</h1>
 <p>FirstLine 開放 api 串接文件</p>
 <h1 id='99477b1e8e'>驗證</h1>
-<aside class="notice">使用此 api 前，您必須先行索取 api 專用帳號密碼以及註冊 IP 白名單</aside>
+<aside class="notice">使用此 api 前，您必須登入後台，前往 [系統設定] > [員工]，找到欲使用 api 之帳號，點擊 [編輯資料]，點擊 [產生金鑰]。 (每一次帳號產生新的金鑰，會將之前屬於該帳號的金鑰作廢)</aside>
 
-<p>FirstLine 的 api 請求皆會取得後以下面兩種方式任一驗證 <code>權杖</code> <strong>(access token)</strong></p>
+<p>取得金鑰，可透過此金鑰執行各種對應帳號具備之系統權限之 api 操作</p>
+
+<p>FirstLine 的 api 請求皆會取得後以下面兩種方式任一驗證 <code>金鑰</code> <strong>(access token)</strong></p>
 
 <p><strong>Authorization header</strong>
 <code>Authorization: Bearer eyJhbGciOiJIUzI1NiI...</code></p>
 
 <p><strong>Query string parameter</strong>
 <code>https://{API_HOST}/api/v1/some-what?token=eyJhbGciOiJIUzI1NiI...</code></p>
-
-<p>因此在訪問 api 之前一定要先取得 <code>權杖</code></p>
-<h2 id='ed1a400c59'>取得權杖</h2><pre class="highlight shell tab-shell"><code>curl -X POST
-    -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"name":"your_username","password":"your_password"}'</span>
-    https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/auth
-</code></pre><h3 id='response'>Response</h3>
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>access_token</td>
-<td>String</td>
-<td>權杖</td>
-</tr>
-<tr>
-<td>token_type</td>
-<td>String</td>
-<td>類型，可忽視</td>
-</tr>
-<tr>
-<td>expires_in</td>
-<td>Number</td>
-<td>過期時間</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>回傳 json 格式</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnNvLmxvY2FsaG9zdDo4MDAwL2FwaS92MS9hdXRoIiwiaWF0IjoxNTU0ODMxOTkyLCJleHAiOjE1NTUwNDc5OTIsIm5iZiI6MTU1NDgzMTk5MiwianRpIjoiTmlPOWhHanpDSng5SEpBSyIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsImVtYWlsIjoib3JlaWxseS5zYWJyeW5hQGV4YW1wbGUub3JnIn0.3a88Iik_FIV9mUioDFVlm9n6U40HrlcEGNwawp8xWgc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">216000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">216000</span><span class="w"> </span><span class="err">毫秒後過期</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>取得權杖，可透過此權杖執行各種對應帳號具備之系統權限之 api 操作</p>
 <h3 id='http-request'>Http Request</h3>
 <p><code>POST https://{API_HOST}/api/v1/auth</code></p>
 <h3 id='post-parameters'>Post Parameters</h3>
@@ -517,59 +473,7 @@
 <td>使用者密碼</td>
 </tr>
 </tbody></table>
-<h2 id='cfe5639a1b'>刷新權杖</h2><pre class="highlight shell tab-shell"><code>curl -X PUT
-    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/auth
-</code></pre>
-<blockquote>
-<p>回傳 json 格式</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnNvLmxvY2FsaG9zdDo4MDAwL2FwaS92MS9hdXRoIiwiaWF0IjoxNTU0ODMxOTkyLCJleHAiOjE1NTUwNDgwNzksIm5iZiI6MTU1NDgzMjA3OSwianRpIjoiNzV2elE2cFVid2haTGU4UyIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsImVtYWlsIjoib3JlaWxseS5zYWJyeW5hQGV4YW1wbGUub3JnIn0.-sQWox84CRUEtgTxKguPzDXe8kcZW4nArRDiveeiNt8"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">216000</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>刷新權杖</p>
-<h3 id='http-request-2'>Http Request</h3>
-<p><code>PUT https://{API_HOST}/api/v1/auth</code></p>
-<h2 id='7febe3c566'>註銷權杖</h2><pre class="highlight shell tab-shell"><code>curl -X POST
-    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/auth/logout
-</code></pre>
-<blockquote>
-<p>回傳 json 格式</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully logged out"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>註銷當前使用之權杖，相當於登出此使用者</p>
-<h3 id='http-request-3'>Http Request</h3>
-<p><code>POST https://{API_HOST}/api/v1/auth/logout</code></p>
-<h2 id='9672717e1a'>取得目前使用者資訊</h2>
-<p>回傳當前權杖對應之使用者資訊</p>
-<pre class="highlight shell tab-shell"><code>curl -X GET
-    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/auth/me
-</code></pre><h3 id='http-request-4'>Http Request</h3>
-<p><code>GET https://{API_HOST}/api/v1/auth/me</code></p>
-
-<blockquote>
-<p>回傳 json 格式</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api-user"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oreilly.sabryna@example.org"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 00:11:22"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 01:09:13"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"login_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 01:09:13"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"instance_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"instance_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"App</span><span class="se">\\</span><span class="s2">Employee"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_immortal"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"leave_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-10 01:04:36"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bi_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='451c27e169'>客戶</h1><h2 id='d00fae2193'>搜尋客戶</h2>
+<h1 id='451c27e169'>客戶</h1><h2 id='d00fae2193'>搜尋客戶</h2>
 <p><code>GET https://{API_HOST}/api/v1/contact?xxxx</code></p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -614,7 +518,98 @@
                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"cz_cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"cz_cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19999"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -699,6 +694,13 @@
 <td>NULL</td>
 <td>String</td>
 <td>電話號碼</td>
+</tr>
+<tr>
+<td>email</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>電子郵件地址</td>
 </tr>
 <tr>
 <td>created_at__start</td>
@@ -854,7 +856,59 @@
 <td>Date</td>
 <td>出生日期</td>
 </tr>
+<tr>
+<td>cz_cols</td>
+<td>false</td>
+<td>NULL</td>
+<td>Array<Object></td>
+<td>動態欄位，參數型態參考下方 <strong>CzCol</strong> 表格說明</td>
+</tr>
 </tbody></table>
+
+<p><strong>CzCol</strong></p>
+
+<p>此欄位為包含以下格式之陣列</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td>動態欄位的 id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>true</td>
+<td>NULL</td>
+<td>String</td>
+<td>動態欄位的值</td>
+</tr>
+</tbody></table>
+
+<p><strong>範例</strong></p>
+
+<p>假設目前有兩個動態欄位，分別為</p>
+
+<p>id=1, name=&#39;體重&#39;
+id=2, name=&#39;血型&#39;</p>
+
+<p>則參數範例如下:</p>
+
+<p><code>
+[
+    {&quot;id&quot;:1, &quot;value&quot;:&quot;18KG&quot;}, // 1: 體重
+    {&quot;id&quot;:2, &quot;value&quot;: &quot;AB型&quot;} // 2: 血型
+]
+</code></p>
 <h2 id='fc101df31d'>更新客戶</h2>
 <p>更新客戶</p>
 <pre class="highlight shell tab-shell"><code>curl -X PUT
@@ -953,7 +1007,61 @@
 <td>Date</td>
 <td>出生日期</td>
 </tr>
+<tr>
+<td>cz_cols</td>
+<td>false</td>
+<td>NULL</td>
+<td>Array<Object></td>
+<td>動態欄位，參數型態參考下方 <strong>CzCol</strong> 表格說明</td>
+</tr>
 </tbody></table>
+
+<p><strong>CzCol</strong></p>
+
+<p>此欄位為包含以下格式之陣列</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td>動態欄位的 id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>true</td>
+<td>NULL</td>
+<td>String</td>
+<td>動態欄位的值</td>
+</tr>
+</tbody></table>
+
+<p><strong>範例</strong></p>
+
+<p>假設目前有兩個動態欄位，分別為</p>
+
+<ul>
+<li>id=1, name=&#39;體重&#39;</li>
+<li>id=2, name=&#39;血型&#39;</li>
+</ul>
+
+<p>則參數範例如下:</p>
+
+<p><code>
+[
+    {&quot;id&quot;:1, &quot;value&quot;:&quot;18KG&quot;}, // 1: 體重
+    {&quot;id&quot;:2, &quot;value&quot;: &quot;AB型&quot;} // 2: 血型
+]
+</code></p>
 <h2 id='6067a06a58'>刪除客戶</h2>
 <p>刪除客戶</p>
 <pre class="highlight shell tab-shell"><code>curl -X DELETE
@@ -966,7 +1074,7 @@
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -5038,6 +5146,10 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>418</td>
 <td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>419</td>
+<td>Sesstion expired.</td>
 </tr>
 <tr>
 <td>422</td>

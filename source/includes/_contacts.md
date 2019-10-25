@@ -36,7 +36,98 @@ meta | Object | Pagination meta
                 "id": 1,
                 "phones": []
             },
-            "cz_cols": [],
+            "cz_cols": [
+                {
+                    "id": 1,
+                    "value": "19999",
+                    "category_id": 1
+                },
+                {
+                    "id": 4,
+                    "value": "51",
+                    "category_id": 1
+                },
+                {
+                    "id": 5,
+                    "value": null,
+                    "category_id": 1
+                },
+                {
+                    "id": 6,
+                    "value": null,
+                    "category_id": 1
+                },
+                {
+                    "id": 7,
+                    "value": null,
+                    "category_id": 1
+                },
+                {
+                    "id": 8,
+                    "value": null,
+                    "category_id": 1
+                },
+                {
+                    "id": 12,
+                    "value": null,
+                    "category_id": 1
+                },
+                {
+                    "id": 21,
+                    "value": null,
+                    "category_id": 1
+                },
+                {
+                    "id": 2,
+                    "value": null,
+                    "category_id": 2
+                },
+                {
+                    "id": 20,
+                    "value": null,
+                    "category_id": 2
+                },
+                {
+                    "id": 3,
+                    "value": null,
+                    "category_id": 6
+                },
+                {
+                    "id": 9,
+                    "value": null,
+                    "category_id": 7
+                },
+                {
+                    "id": 10,
+                    "value": null,
+                    "category_id": 7
+                },
+                {
+                    "id": 11,
+                    "value": null,
+                    "category_id": 7
+                },
+                {
+                    "id": 13,
+                    "value": null,
+                    "category_id": 8
+                },
+                {
+                    "id": 14,
+                    "value": null,
+                    "category_id": 8
+                },
+                {
+                    "id": 15,
+                    "value": null,
+                    "category_id": 8
+                },
+                {
+                    "id": 16,
+                    "value": "0",
+                    "category_id": 9
+                }
+            ],
         }
     ],
     "meta": {
@@ -64,6 +155,7 @@ birth_at__end | false | NULL | Date | 生日(結束)
 search | false | NULL | String | 針對電話號碼，會員編號，身分證，姓名進行模糊搜尋
 cz_cols | false | NULL | Array<Object> | 動態欄位，參數型態參考下方 **CzCol** 表格說明
 phone_number | false | NULL | String | 電話號碼
+email | false | NULL |String | 電子郵件地址
 created_at__start | false | NULL | DateTime | 客戶建立時間(開始)
 created_at__end | false | NULL | DateTime | 客戶建立時間(結束)
 birth_months | false | NULL | String | 壽星月份，example: 1,2,3 表示查詢 1,2,3月的壽星
@@ -135,6 +227,33 @@ gender | false | NULL | Number | 性別, 0: 女, 1: 男
 first_name | true | NULL | String | 姓
 last_name | false | NULL | String | 名
 birth_at | false | NULL | Date | 出生日期
+cz_cols | false | NULL | Array<Object> | 動態欄位，參數型態參考下方 **CzCol** 表格說明
+
+
+**CzCol**
+
+此欄位為包含以下格式之陣列
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+id | true | NULL | Number| 動態欄位的 id
+value | true | NULL | String | 動態欄位的值
+
+**範例**
+
+假設目前有兩個動態欄位，分別為
+
+id=1, name='體重'
+id=2, name='血型'
+
+則參數範例如下:
+
+`
+[
+    {"id":1, "value":"18KG"}, // 1: 體重
+    {"id":2, "value": "AB型"} // 2: 血型
+]
+`
 
 ## 更新客戶
 
@@ -195,7 +314,33 @@ gender | false | NULL | Number | 性別, 0: 女, 1: 男
 first_name | false | NULL | String | 姓
 last_name | false | NULL | String | 名
 birth_at | false | NULL | Date | 出生日期
+cz_cols | false | NULL | Array<Object> | 動態欄位，參數型態參考下方 **CzCol** 表格說明
 
+
+**CzCol**
+
+此欄位為包含以下格式之陣列
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+id | true | NULL | Number| 動態欄位的 id
+value | true | NULL | String | 動態欄位的值
+
+**範例**
+
+假設目前有兩個動態欄位，分別為
+
+- id=1, name='體重'
+- id=2, name='血型'
+
+則參數範例如下:
+
+`
+[
+    {"id":1, "value":"18KG"}, // 1: 體重
+    {"id":2, "value": "AB型"} // 2: 血型
+]
+`
 ## 刪除客戶
 
 刪除客戶
@@ -212,7 +357,7 @@ curl -X DELETE
 
 {
     "data": {
-        "status": 200,
+        "status": 204,
     }
 }
 
