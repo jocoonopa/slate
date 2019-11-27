@@ -1,6 +1,6 @@
 # 電話號碼
 
-透過 `搜尋客戶` 取得客戶的 **profile_id**，使用此數值進行 `電話號碼` 的 api 操作
+## 瀏覽電話號碼
 
 ## 新增電話號碼
 
@@ -42,7 +42,7 @@ meta | Object | Pagination meta
 
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
-profile_id | true | NULL | Number | 客戶的 **profile_id**
+contact_id | true | NULL | Number | 客戶的 **id** (可透過 `搜尋客戶` 取得客戶的 **id**)
 type | true | NULL | Number | 0: 住家, 1: 公司, 2: 手機, 3: 傳真, 4: 其他
 number | true | NULL | String | 電話號碼
 extension | false | NULL | String | 分機號碼
@@ -91,7 +91,7 @@ phone_number | true | NULL | Number | 電話號碼的id
 
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
-profile_id | true | NULL | Number | 客戶的 **profile_id**
+contact_id | true | NULL | Number | 客戶的 **id**
 type | false | NULL | Number | 0: 住家, 1: 公司, 2: 手機, 3: 傳真, 4: 其他
 number | false | NULL | String | 電話號碼
 extension | false | NULL | String | 分機號碼

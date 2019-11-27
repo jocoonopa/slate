@@ -226,6 +226,26 @@
                   <li>
                     <a href="#post-parameters" class="toc-h2 toc-link" data-title="Post Parameters">Post Parameters</a>
                   </li>
+                  <li>
+                    <a href="#cfe5639a1b" class="toc-h2 toc-link" data-title="刷新權杖">刷新權杖</a>
+                  </li>
+                  <li>
+                    <a href="#7febe3c566" class="toc-h2 toc-link" data-title="註銷權杖">註銷權杖</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#1e9eb3f03a" class="toc-h1 toc-link" data-title="請求使用說明">請求使用說明</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#125b5ae3ae" class="toc-h2 toc-link" data-title="請求示意圖">請求示意圖</a>
+                  </li>
+                  <li>
+                    <a href="#5fc89546cc" class="toc-h2 toc-link" data-title="其他方法">其他方法</a>
+                  </li>
+                  <li>
+                    <a href="#put" class="toc-h2 toc-link" data-title="PUT 請求示意圖">PUT 請求示意圖</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -262,6 +282,9 @@
           <li>
             <a href="#de5111e659" class="toc-h1 toc-link" data-title="電話號碼">電話號碼</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2631521af2" class="toc-h2 toc-link" data-title="瀏覽電話號碼">瀏覽電話號碼</a>
+                  </li>
                   <li>
                     <a href="#75379f9f31" class="toc-h2 toc-link" data-title="新增電話號碼">新增電話號碼</a>
                   </li>
@@ -472,8 +495,96 @@
 <td>NULL</td>
 <td>使用者密碼</td>
 </tr>
+<tr>
+<td>ttl</td>
+<td>false</td>
+<td>60</td>
+<td>金鑰過期時間，單位為分鐘，預設 60 分鐘過期</td>
+</tr>
 </tbody></table>
-<h1 id='451c27e169'>客戶</h1><h2 id='d00fae2193'>搜尋客戶</h2>
+<h2 id='cfe5639a1b'>刷新權杖</h2><pre class="highlight shell tab-shell"><code>curl -X PUT
+    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/auth
+</code></pre>
+<blockquote>
+<p>回傳 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnNvLmxvY2FsaG9zdDo4MDAwL2FwaS92MS9hdXRoIiwiaWF0IjoxNTU0ODMxOTkyLCJleHAiOjE1NTUwNDgwNzksIm5iZiI6MTU1NDgzMjA3OSwianRpIjoiNzV2elE2cFVid2haTGU4UyIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsImVtYWlsIjoib3JlaWxseS5zYWJyeW5hQGV4YW1wbGUub3JnIn0.-sQWox84CRUEtgTxKguPzDXe8kcZW4nArRDiveeiNt8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">216000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>Http Request</h3>
+<p><code>PUT https://{API_HOST}/api/v1/auth</code></p>
+<h2 id='7febe3c566'>註銷權杖</h2><pre class="highlight shell tab-shell"><code>curl -X POST
+    -H <span class="s2">"Accept: application/json"</span>
+    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/auth/logout
+</code></pre>
+<blockquote>
+<p>回傳 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully logged out"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>註銷當前使用之權杖，相當於登出此使用者</p>
+<h3 id='http-request-3'>Http Request</h3>
+<p><code>POST https://{API_HOST}/api/v1/auth/logout</code></p>
+<h1 id='1e9eb3f03a'>請求使用說明</h1>
+<p>FirstLine API 會使用到的 HTTP 請求方法共有四種，</p>
+
+<ul>
+<li><code>GET</code> 方法請求展示指定資源，即<code>瀏覽</code></li>
+<li><code>POST</code> 方法用於提交指定資源的實體，即 <code>新增</code></li>
+<li><code>PUT</code>  方法會取代指定資源，即 <code>更新</code></li>
+<li><code>DELETE</code> 方法會刪除指定資源，即 <code>刪除</code></li>
+</ul>
+<h2 id='125b5ae3ae'>請求示意圖</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"membership_no"</span><span class="p">:</span><span class="s2">"R0000555"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identity_no"</span><span class="p">:</span><span class="s2">"A000000002"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gender"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"陳"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"大華"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"birth_at"</span><span class="p">:</span><span class="s2">"1990-01-01"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>下方為使用 <code>POST</code> 請求新增一個客戶的 postman 示意圖:</p>
+
+<p><strong>請求主體</strong>
+<img src="images/post_example_1.png"></img></p>
+
+<p>這邊 postman 的 <code>Body</code> 我們選用 <code>raw</code> 直接撰寫 json，避免 postman 誤將數字包裹為字串，造成部分欄位驗證時會發生錯誤。</p>
+
+<p><strong>表頭</strong>
+<img src="images/post_example_2.png"></img></p>
+
+<p>表頭的部分有三個，下面逐一解釋:</p>
+<h4 id='authorization'>Authorization</h4>
+<p>即 token，亦可使用 query string parameter 替代。</p>
+<h4 id='content-type'>Content-Type</h4>
+<p>確保 server 端接收和回傳都會以 json 形式處理，因此這表頭是必要的。</p>
+<h4 id='accept'>Accept</h4>
+<p>為了確保 server 端接收和回傳都會以 json 形式處理，因此這表頭是必要的。</p>
+<h2 id='5fc89546cc'>其他方法</h2>
+<p><code>GET</code>，<code>DELETE</code> 依此類推，選用對應的 postman 請求方法即可。</p>
+
+<p><code>PUT</code> 請求方法較為特殊，請參考下方區塊之說明。</p>
+<h2 id='put'>PUT 請求示意圖</h2>
+<p>由於 <strong>FirstLine API</strong> 不支援直接使用 Http <code>PUT</code> 請求方法，
+因此需要進行 <code>PUT</code> 請求時，請使用 <code>POST</code> 替代，
+並且附帶參數 <code>_method=&quot;put&quot;</code>。</p>
+
+<p>下方為 postman 示意圖:</p>
+
+<p><img src="images/put_example.png"></img></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"membership_no"</span><span class="p">:</span><span class="s2">"R0000567"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identity_no"</span><span class="p">:</span><span class="s2">"A000000001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gender"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"王"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"birth_at"</span><span class="p">:</span><span class="s2">"1999-09-09"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='451c27e169'>客戶</h1><h2 id='d00fae2193'>搜尋客戶</h2>
 <p><code>GET https://{API_HOST}/api/v1/contact?xxxx</code></p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -1335,9 +1446,7 @@ curl -X PUT
 <td>此客戶該動態欄位的值</td>
 </tr>
 </tbody></table>
-<h1 id='de5111e659'>電話號碼</h1>
-<p>透過 <code>搜尋客戶</code> 取得客戶的 <strong>profile_id</strong>，使用此數值進行 <code>電話號碼</code> 的 api 操作</p>
-<h2 id='75379f9f31'>新增電話號碼</h2>
+<h1 id='de5111e659'>電話號碼</h1><h2 id='2631521af2'>瀏覽電話號碼</h2><h2 id='75379f9f31'>新增電話號碼</h2>
 <p>新增電話號碼</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -1389,11 +1498,11 @@ curl -X PUT
 </tr>
 </thead><tbody>
 <tr>
-<td>profile_id</td>
+<td>contact_id</td>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶的 <strong>profile_id</strong></td>
+<td>客戶的 <strong>id</strong> (可透過 <code>搜尋客戶</code> 取得客戶的 <strong>id</strong>)</td>
 </tr>
 <tr>
 <td>type</td>
@@ -1477,11 +1586,11 @@ curl -X PUT
 </tr>
 </thead><tbody>
 <tr>
-<td>profile_id</td>
+<td>contact_id</td>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶的 <strong>profile_id</strong></td>
+<td>客戶的 <strong>id</strong></td>
 </tr>
 <tr>
 <td>type</td>
@@ -1880,11 +1989,11 @@ curl -X PUT
 </tr>
 </thead><tbody>
 <tr>
-<td>profile_id</td>
+<td>contact_id</td>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶的 <strong>profile_id</strong></td>
+<td>客戶的 id</td>
 </tr>
 <tr>
 <td>type</td>
@@ -2000,11 +2109,11 @@ curl -X PUT
 </tr>
 </thead><tbody>
 <tr>
-<td>profile_id</td>
+<td>contact_id</td>
 <td>false</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶的 <strong>profile_id</strong></td>
+<td>客戶的 id</td>
 </tr>
 <tr>
 <td>type</td>

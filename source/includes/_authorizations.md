@@ -21,3 +21,46 @@ Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 name | true | NULL | 使用者帳號
 password | true | NULL | 使用者密碼
+ttl | false | 60 | 金鑰過期時間，單位為分鐘，預設 60 分鐘過期
+
+
+## 刷新權杖
+
+```shell
+curl -X PUT
+    -H "Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..." https://{API_HOST}/api/v1/auth
+```
+
+> 回傳 json 格式
+
+```json
+{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnNvLmxvY2FsaG9zdDo4MDAwL2FwaS92MS9hdXRoIiwiaWF0IjoxNTU0ODMxOTkyLCJleHAiOjE1NTUwNDgwNzksIm5iZiI6MTU1NDgzMjA3OSwianRpIjoiNzV2elE2cFVid2haTGU4UyIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsImVtYWlsIjoib3JlaWxseS5zYWJyeW5hQGV4YW1wbGUub3JnIn0.-sQWox84CRUEtgTxKguPzDXe8kcZW4nArRDiveeiNt8",
+    "token_type": "bearer",
+    "expires_in": 216000
+}
+```
+
+### Http Request
+`PUT https://{API_HOST}/api/v1/auth`
+
+## 註銷權杖
+
+```shell
+curl -X POST
+    -H "Accept: application/json"
+    -H "Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..." https://{API_HOST}/api/v1/auth/logout
+```
+
+> 回傳 json 格式
+
+```json
+{
+    "message": "Successfully logged out"
+}
+```
+
+註銷當前使用之權杖，相當於登出此使用者
+
+### Http Request
+`POST https://{API_HOST}/api/v1/auth/logout`
