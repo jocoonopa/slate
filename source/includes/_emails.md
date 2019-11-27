@@ -10,13 +10,6 @@ curl -X GET
     "https://{API_HOST}/api/v1/email-contact?contact_id=1"
 ```
 
-### Response
-
-Property | Type | Description
--------- | ---- | -----------
-data | Array of objects | <a href="#email">`電子信箱`陣列</a>
-meta | Object | Pagination meta
-
 > 回傳 json 格式
 
 ```json
@@ -88,6 +81,16 @@ Parameter | Required | Default | Type | Description
 page | false | 1 | Number | 目前在第幾頁
 per_page | false | 15 | Number | 每頁呈現多少筆
 contact_id | false | NULL | Number | 客戶的id
+name | false | NULL | String | 定義的 Email 名稱
+description | false | NULL | String | Email 備註
+address | false | NULL | String | Email 位址
+
+### Response
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Array of objects | <a href="#email">`電子信箱`陣列</a>
+meta | Object | Pagination meta
 
 ## 新增電子信箱
 

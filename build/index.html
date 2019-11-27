@@ -283,7 +283,7 @@
             <a href="#de5111e659" class="toc-h1 toc-link" data-title="電話號碼">電話號碼</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#2631521af2" class="toc-h2 toc-link" data-title="瀏覽電話號碼">瀏覽電話號碼</a>
+                    <a href="#2a069cae23" class="toc-h2 toc-link" data-title="搜尋電話號碼">搜尋電話號碼</a>
                   </li>
                   <li>
                     <a href="#75379f9f31" class="toc-h2 toc-link" data-title="新增電話號碼">新增電話號碼</a>
@@ -297,7 +297,7 @@
               </ul>
           </li>
           <li>
-            <a href="#5b8574054f" class="toc-h1 toc-link" data-title="聯絡地址">聯絡地址</a>
+            <a href="#bdb00213b4" class="toc-h1 toc-link" data-title="國家，縣市，區">國家，縣市，區</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#cf683d85d2" class="toc-h2 toc-link" data-title="查詢國家">查詢國家</a>
@@ -309,7 +309,10 @@
                     <a href="#f576415c43" class="toc-h2 toc-link" data-title="查詢區">查詢區</a>
                   </li>
                   <li>
-                    <a href="#c2e22db2e1" class="toc-h2 toc-link" data-title="新增聯絡地址">新增聯絡地址</a>
+                    <a href="#38f36cb73f" class="toc-h2 toc-link" data-title="搜尋聯絡地址">搜尋聯絡地址</a>
+                  </li>
+                  <li>
+                    <a href="#d156630b83" class="toc-h2 toc-link" data-title="新增指定客戶聯絡地址">新增指定客戶聯絡地址</a>
                   </li>
                   <li>
                     <a href="#832d7facc2" class="toc-h2 toc-link" data-title="修改聯絡地址">修改聯絡地址</a>
@@ -530,15 +533,21 @@
 <h3 id='http-request-3'>Http Request</h3>
 <p><code>POST https://{API_HOST}/api/v1/auth/logout</code></p>
 <h1 id='1e9eb3f03a'>請求使用說明</h1>
-<p>FirstLine API 會使用到的 HTTP 請求方法共有四種，</p>
+<p><code>FirstLine API</code> 是使用 <code>RESTful</code> 風格設計的 API，使用到的 HTTP 請求方法共有四種:</p>
 
 <ul>
-<li><code>GET</code> 方法請求展示指定資源，即<code>瀏覽</code></li>
-<li><code>POST</code> 方法用於提交指定資源的實體，即 <code>新增</code></li>
-<li><code>PUT</code>  方法會取代指定資源，即 <code>更新</code></li>
-<li><code>DELETE</code> 方法會刪除指定資源，即 <code>刪除</code></li>
+<li><code>GET</code> 方法，請求展示指定資源，即<code>瀏覽</code></li>
+<li><code>POST</code> 方法，用於提交指定資源的實體，即 <code>新增</code></li>
+<li><code>PUT</code> 方法，取代指定資源，即 <code>更新</code></li>
+<li><code>DELETE</code> 方法，刪除指定資源，即 <code>刪除</code></li>
 </ul>
-<h2 id='125b5ae3ae'>請求示意圖</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='125b5ae3ae'>請求示意圖</h2>
+<p>下方為使用 <code>POST</code> 請求新增一個客戶的 postman 示意圖:</p>
+<h3 id='bbc1d18a17'>請求主體</h3>
+<p><img src="images/post_example_1.png"></img></p>
+
+<p>這邊 postman 的 <code>Body</code> 我們選用 <code>raw</code> 直接撰寫 json，避免 postman 誤將數字包裹為字串，造成部分欄位驗證時會發生錯誤。</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"membership_no"</span><span class="p">:</span><span class="s2">"R0000555"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"identity_no"</span><span class="p">:</span><span class="s2">"A000000002"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"gender"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -546,17 +555,14 @@
     </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"大華"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"birth_at"</span><span class="p">:</span><span class="s2">"1990-01-01"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='f614917f85'>表頭</h3>
+<p><img src="images/post_example_2.png"></img></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Authorization"</span><span class="p">:</span><span class="s2">"YOUR_TOKEN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Accept"</span><span class="p">:</span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>下方為使用 <code>POST</code> 請求新增一個客戶的 postman 示意圖:</p>
-
-<p><strong>請求主體</strong>
-<img src="images/post_example_1.png"></img></p>
-
-<p>這邊 postman 的 <code>Body</code> 我們選用 <code>raw</code> 直接撰寫 json，避免 postman 誤將數字包裹為字串，造成部分欄位驗證時會發生錯誤。</p>
-
-<p><strong>表頭</strong>
-<img src="images/post_example_2.png"></img></p>
-
 <p>表頭的部分有三個，下面逐一解釋:</p>
 <h4 id='authorization'>Authorization</h4>
 <p>即 token，亦可使用 query string parameter 替代。</p>
@@ -1446,13 +1452,102 @@ curl -X PUT
 <td>此客戶該動態欄位的值</td>
 </tr>
 </tbody></table>
-<h1 id='de5111e659'>電話號碼</h1><h2 id='2631521af2'>瀏覽電話號碼</h2><h2 id='75379f9f31'>新增電話號碼</h2>
-<p>新增電話號碼</p>
-<pre class="highlight shell tab-shell"><code>curl -X POST
+<h1 id='de5111e659'>電話號碼</h1><h2 id='2a069cae23'>搜尋電話號碼</h2>
+<p>搜尋電話號碼</p>
+<pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json"</span>
-    <span class="s1">'{"type": 0, "number": "23255780374507", "extension": "54 311", "description": "Up-sized mobile focusgroup"}'</span>
+    <span class="s1">'{"type": 0, "number": "0928846763"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/phone-number
-</code></pre><h3 id='response'>Response</h3>
+</code></pre>
+<blockquote>
+<p>回傳 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">245621</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"extension"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0928846763"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1935008</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1935038</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone_number_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">245621</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/phone-number?number=0928846763&amp;contact_id=1935038&amp;page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/phone-number?number=0928846763&amp;contact_id=1935038&amp;page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/phone-number"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='http-request'>Http Request</h3>
+<p><code>GET https://{API_DOMAIN}/api/v1/phone-number</code></p>
+<h3 id='form-data'>Form Data</h3>
+<p>下表為可使用的過濾條件</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact_id</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>客戶的 <strong>id</strong> (可透過 <code>搜尋客戶</code> 取得客戶的 <strong>id</strong>)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>0: 住家, 1: 公司, 2: 手機, 3: 傳真, 4: 其他</td>
+</tr>
+<tr>
+<td>number</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>電話號碼</td>
+</tr>
+<tr>
+<td>extension</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>分機號碼</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>備註</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -1471,7 +1566,13 @@ curl -X PUT
 <td>Pagination meta</td>
 </tr>
 </tbody></table>
-
+<h2 id='75379f9f31'>新增電話號碼</h2>
+<p>新增電話號碼</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST
+    -H <span class="s2">"Content-Type: application/json"</span>
+    <span class="s1">'{"type": 0, "number": "23255780374507", "extension": "54 311", "description": "Up-sized mobile focusgroup"}'</span>
+    https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/phone-number
+</code></pre>
 <blockquote>
 <p>回傳 json 格式</p>
 </blockquote>
@@ -1485,9 +1586,9 @@ curl -X PUT
         </span><span class="s2">"profile_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request'>Http Request</h3>
+</span></code></pre><h3 id='http-request-2'>Http Request</h3>
 <p><code>POST https://{API_DOMAIN}/api/v1/phone-number</code></p>
-<h3 id='form-data'>Form Data</h3>
+<h3 id='form-data-2'>Form Data</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1555,7 +1656,7 @@ curl -X PUT
         </span><span class="s2">"profile_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>Http Request</h3>
+</span></code></pre><h3 id='http-request-3'>Http Request</h3>
 <p><code>PUT https://{API_DOMAIN}/api/v1/phone-number/{phone_number}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -1575,7 +1676,7 @@ curl -X PUT
 <td>電話號碼的id</td>
 </tr>
 </tbody></table>
-<h3 id='form-data-2'>Form Data</h3>
+<h3 id='form-data-3'>Form Data</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1635,7 +1736,7 @@ curl -X PUT
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>Http Request</h3>
+</span></code></pre><h3 id='http-request-4'>Http Request</h3>
 <p><code>DELETE https://{API_DOMAIN}/api/v1/phone-number/{phone_number}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -1655,7 +1756,7 @@ curl -X PUT
 <td>電話號碼的id</td>
 </tr>
 </tbody></table>
-<h1 id='5b8574054f'>聯絡地址</h1><h2 id='cf683d85d2'>查詢國家</h2>
+<h1 id='bdb00213b4'>國家，縣市，區</h1><h2 id='cf683d85d2'>查詢國家</h2>
 <p>查詢國家</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -1938,7 +2039,128 @@ curl -X PUT
 <td>區名稱</td>
 </tr>
 </tbody></table>
-<h2 id='c2e22db2e1'>新增聯絡地址</h2>
+<h2 id='38f36cb73f'>搜尋聯絡地址</h2>
+<p>搜尋聯絡地址</p>
+<pre class="highlight shell tab-shell"><code>curl -X GET
+    -H <span class="s2">"Content-Type: application/json"</span>
+    <span class="s1">'{"profile_id":1,"country_id":1,"state_id":1,"city_id":1,"address": "67, rue Michelle Jones 81785 Berge"}'</span>
+    https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/address
+</code></pre>
+<blockquote>
+<p>回傳 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67, rue Michelle Jones</span><span class="se">\n</span><span class="s2">81785 Berge"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"profile_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"台北市"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"state_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"台灣"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"abbrev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"state_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"仁愛區"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>Http Request</h3>
+<p><code>GET https://{API_DOMAIN}/api/v1/address</code></p>
+<h3 id='form-data'>Form Data</h3>
+<p>下表為可使用的過濾條件</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact_id</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>客戶的 id</td>
+</tr>
+<tr>
+<td>type</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>0:住家,1:郵寄,2:帳單,3:快遞,4:現居,5:其他</td>
+</tr>
+<tr>
+<td>address</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>country_id</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>國家的id</td>
+</tr>
+<tr>
+<td>state_id</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>城市的id</td>
+</tr>
+<tr>
+<td>city_id</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>區域的id</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>地址描述</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>Array of objects</td>
+<td><a href="#address"><code>地址</code>陣列</a></td>
+</tr>
+<tr>
+<td>meta</td>
+<td>Object</td>
+<td>Pagination meta</td>
+</tr>
+</tbody></table>
+<h2 id='d156630b83'>新增指定客戶聯絡地址</h2>
 <p>新增聯絡地址</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -1976,9 +2198,9 @@ curl -X PUT
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-4'>Http Request</h3>
+</span></code></pre><h3 id='http-request-2'>Http Request</h3>
 <p><code>POST https://{API_DOMAIN}/api/v1/address</code></p>
-<h3 id='form-data'>Form Data</h3>
+<h3 id='form-data-2'>Form Data</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2044,7 +2266,7 @@ curl -X PUT
     -H <span class="s2">"Content-Type: application/json"</span>
     <span class="s1">'{"address": "仁愛路一段"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/address/1
-</code></pre><h3 id='response-4'>Response</h3>
+</code></pre><h3 id='response-2'>Response</h3>
 <p><a href="#address"><code>地址</code></a></p>
 
 <blockquote>
@@ -2078,7 +2300,7 @@ curl -X PUT
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-5'>Http Request</h3>
+</span></code></pre><h3 id='http-request-3'>Http Request</h3>
 <p><code>PUT https://{API_DOMAIN}/api/v1/address/{address}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -2098,7 +2320,7 @@ curl -X PUT
 <td>地址的id</td>
 </tr>
 </tbody></table>
-<h3 id='form-data-2'>Form Data</h3>
+<h3 id='form-data-3'>Form Data</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2172,7 +2394,7 @@ curl -X PUT
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-6'>Http Request</h3>
+</span></code></pre><h3 id='http-request-4'>Http Request</h3>
 <p><code>DELETE https://{API_DOMAIN}/api/v1/address/{address}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -2197,26 +2419,7 @@ curl -X PUT
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json"</span>
     <span class="s2">"https://{API_HOST}/api/v1/email-contact?contact_id=1"</span>
-</code></pre><h3 id='response'>Response</h3>
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>data</td>
-<td>Array of objects</td>
-<td><a href="#email"><code>電子信箱</code>陣列</a></td>
-</tr>
-<tr>
-<td>meta</td>
-<td>Object</td>
-<td>Pagination meta</td>
-</tr>
-</tbody></table>
-
+</code></pre>
 <blockquote>
 <p>回傳 json 格式</p>
 </blockquote>
@@ -2308,6 +2511,46 @@ curl -X PUT
 <td>NULL</td>
 <td>Number</td>
 <td>客戶的id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>定義的 Email 名稱</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>Email 備註</td>
+</tr>
+<tr>
+<td>address</td>
+<td>false</td>
+<td>NULL</td>
+<td>String</td>
+<td>Email 位址</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>Array of objects</td>
+<td><a href="#email"><code>電子信箱</code>陣列</a></td>
+</tr>
+<tr>
+<td>meta</td>
+<td>Object</td>
+<td>Pagination meta</td>
 </tr>
 </tbody></table>
 <h2 id='0cb091bc54'>新增電子信箱</h2>
