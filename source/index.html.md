@@ -1,9 +1,6 @@
 ---
 title: API Reference
 
-language_tabs:
-  - shell
-
 toc_footers:
   - <a href='https://www.firstline.cc'>Powered by FirstLine</a>
 
@@ -12,6 +9,9 @@ includes:
   - request
   - contacts
   - czcols
+  - cz_col_categories
+  - contact_cz_col
+  - contact_cz_relations
   - phone_numbers
   - addresses_belongs
   - addresses

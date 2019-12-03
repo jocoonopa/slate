@@ -82,6 +82,34 @@ category | Object | <a href="#category">`主分類`</a>
 creater_id | Number | 建立此動態欄位的員工id
 creater | Object | 建立此動態欄位的 <a href="#employee">`員工`</a>
 
+## 動態欄位分類 (CzColCategory)
+
+Property | Type | Description
+-------- | ---- | -----------
+id | Number | 動態欄位分類 的 id
+name | String | 動態欄位分類名稱
+type | Number | 動態欄位分類類型 {0: 客戶動態關聯表單 1: 客戶動態關聯表格 2: 工單動態關聯表單 3: 工單動態關聯表格}
+description | String | 動態欄位分類描述
+cols | Array of objects | <a href="#czcol">`動態欄位`</a>
+
+## 客戶動態關聯表格 (ContactCzRelation)
+
+Property | Type | Description
+-------- | ---- | -----------
+id | Number | `客戶動態關聯表格` id
+relation_id | Number | <a href="#czcolcategory">`動態欄位分類`</a> 的 id
+relation_name | String | <a href="#czcolcategory">`動態欄位分類`</a> 的名稱
+information | Array of Objects | <a href="#contactczrelationinformation">`客戶動態關聯表格內容`</a> 的陣列
+
+## 客戶動態關聯表格內容 (ContactCzRelationInformation)
+
+Property | Type | Description
+-------- | ---- | -----------
+id | Number | `客戶動態關聯表格內容`的 id
+value | String | `客戶動態關聯表格內容`的值
+col_id | Number | <a href="#czcol">`動態欄位` </a>的 id
+col_name | String | <a href="#czcol">`動態欄位` </a>的名稱
+
 ## 客戶標籤 (Contact Tag)
 
 Property | Type | Description

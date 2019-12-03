@@ -246,14 +246,16 @@ value | true | NULL | String | 動態欄位的值
 id=1, name='體重'
 id=2, name='血型'
 
-則參數範例如下:
+則參數範例如右:
 
-`
+> Form Data cz_cols
+
+```json
 [
     {"id":1, "value":"18KG"}, // 1: 體重
     {"id":2, "value": "AB型"} // 2: 血型
 ]
-`
+```
 
 ## 更新客戶
 
@@ -333,14 +335,17 @@ value | true | NULL | String | 動態欄位的值
 - id=1, name='體重'
 - id=2, name='血型'
 
-則參數範例如下:
+則參數範例如右:
 
-`
+> Form Data cz_cols
+
+```json
 [
     {"id":1, "value":"18KG"}, // 1: 體重
     {"id":2, "value": "AB型"} // 2: 血型
 ]
-`
+```
+
 ## 刪除客戶
 
 刪除客戶
@@ -370,5 +375,5 @@ curl -X DELETE
 
 Parameter | Description
 --------- | -----------
-id | 客戶的 id
+id | <<a href="#contact">`客戶`</a>的 id
 

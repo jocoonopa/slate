@@ -201,7 +201,7 @@
       <script src="javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,9 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-        </div>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#6b60b8fdb4" class="toc-h1 toc-link" data-title="介紹">介紹</a>
@@ -269,13 +266,39 @@
             <a href="#c4ab0655f7" class="toc-h1 toc-link" data-title="動態欄位">動態欄位</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#7a7a0c40c1" class="toc-h2 toc-link" data-title="動態欄位表單 (延伸欄位)">動態欄位表單 (延伸欄位)</a>
+                  </li>
+                  <li>
+                    <a href="#5e13432c83" class="toc-h2 toc-link" data-title="動態關聯表格 (關聯紀錄)">動態關聯表格 (關聯紀錄)</a>
+                  </li>
+                  <li>
+                    <a href="#5ffa6fd220" class="toc-h2 toc-link" data-title="目前套用在 [客戶] 以及 [工單]">目前套用在 [客戶] 以及 [工單]</a>
+                  </li>
+                  <li>
                     <a href="#8485ba0e1e" class="toc-h2 toc-link" data-title="目前系統所有的動態欄位">目前系統所有的動態欄位</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#5bd394b1a3" class="toc-h1 toc-link" data-title="動態欄位分類">動態欄位分類</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ab12788b14" class="toc-h2 toc-link" data-title="所有動態欄位分類">所有動態欄位分類</a>
                   </li>
                   <li>
                     <a href="#8de56c8b3e" class="toc-h2 toc-link" data-title="此客戶綁定的動態欄位">此客戶綁定的動態欄位</a>
                   </li>
                   <li>
-                    <a href="#71e8a9d05d" class="toc-h2 toc-link" data-title="綁定並更新客戶的動態欄位之值">綁定並更新客戶的動態欄位之值</a>
+                    <a href="#3d33539a00" class="toc-h2 toc-link" data-title="列出指定客戶關聯紀錄 ([客戶關聯紀錄] 即 [客戶動態關聯表格])">列出指定客戶關聯紀錄 ([客戶關聯紀錄] 即 [客戶動態關聯表格])</a>
+                  </li>
+                  <li>
+                    <a href="#e5ebf12602" class="toc-h2 toc-link" data-title="對指定客戶增加關聯紀錄 (即客戶動態關聯表格)">對指定客戶增加關聯紀錄 (即客戶動態關聯表格)</a>
+                  </li>
+                  <li>
+                    <a href="#f823b2c5e9" class="toc-h2 toc-link" data-title="對指定客戶更新關聯紀錄 (即客戶動態關聯表格)">對指定客戶更新關聯紀錄 (即客戶動態關聯表格)</a>
+                  </li>
+                  <li>
+                    <a href="#c6a901e4c4" class="toc-h2 toc-link" data-title="對指定客戶刪除關聯紀錄 (即客戶動態關聯表格)">對指定客戶刪除關聯紀錄 (即客戶動態關聯表格)</a>
                   </li>
               </ul>
           </li>
@@ -410,6 +433,15 @@
                   </li>
                   <li>
                     <a href="#czcol" class="toc-h2 toc-link" data-title="動態欄位 (CzCol)">動態欄位 (CzCol)</a>
+                  </li>
+                  <li>
+                    <a href="#czcolcategory" class="toc-h2 toc-link" data-title="動態欄位分類 (CzColCategory)">動態欄位分類 (CzColCategory)</a>
+                  </li>
+                  <li>
+                    <a href="#contactczrelation" class="toc-h2 toc-link" data-title="客戶動態關聯表格 (ContactCzRelation)">客戶動態關聯表格 (ContactCzRelation)</a>
+                  </li>
+                  <li>
+                    <a href="#contactczrelationinformation" class="toc-h2 toc-link" data-title="客戶動態關聯表格內容 (ContactCzRelationInformation)">客戶動態關聯表格內容 (ContactCzRelationInformation)</a>
                   </li>
                   <li>
                     <a href="#contact-tag" class="toc-h2 toc-link" data-title="客戶標籤 (Contact Tag)">客戶標籤 (Contact Tag)</a>
@@ -1023,15 +1055,16 @@
 <p>id=1, name=&#39;體重&#39;
 id=2, name=&#39;血型&#39;</p>
 
-<p>則參數範例如下:</p>
+<p>則參數範例如右:</p>
 
-<p><code>
-[
-    {&quot;id&quot;:1, &quot;value&quot;:&quot;18KG&quot;}, // 1: 體重
-    {&quot;id&quot;:2, &quot;value&quot;: &quot;AB型&quot;} // 2: 血型
-]
-</code></p>
-<h2 id='fc101df31d'>更新客戶</h2>
+<blockquote>
+<p>Form Data cz_cols</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"18KG"</span><span class="p">},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="err">體重</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB型"</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="err">血型</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='fc101df31d'>更新客戶</h2>
 <p>更新客戶</p>
 <pre class="highlight shell tab-shell"><code>curl -X PUT
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -1176,15 +1209,16 @@ id=2, name=&#39;血型&#39;</p>
 <li>id=2, name=&#39;血型&#39;</li>
 </ul>
 
-<p>則參數範例如下:</p>
+<p>則參數範例如右:</p>
 
-<p><code>
-[
-    {&quot;id&quot;:1, &quot;value&quot;:&quot;18KG&quot;}, // 1: 體重
-    {&quot;id&quot;:2, &quot;value&quot;: &quot;AB型&quot;} // 2: 血型
-]
-</code></p>
-<h2 id='6067a06a58'>刪除客戶</h2>
+<blockquote>
+<p>Form Data cz_cols</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"18KG"</span><span class="p">},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="err">體重</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB型"</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="err">血型</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='6067a06a58'>刪除客戶</h2>
 <p>刪除客戶</p>
 <pre class="highlight shell tab-shell"><code>curl -X DELETE
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -1211,10 +1245,18 @@ id=2, name=&#39;血型&#39;</p>
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>客戶的 id</td>
+<td>&lt;<a href="#contact"><code>客戶</code></a>的 id</td>
 </tr>
 </tbody></table>
-<h1 id='c4ab0655f7'>動態欄位</h1><h2 id='8485ba0e1e'>目前系統所有的動態欄位</h2>
+<h1 id='c4ab0655f7'>動態欄位</h1>
+<p>鑑於客戶間商務邏輯的不同，勢必對於表單欄位的需求也會有差異，固定的表單欄位很難滿足所有客戶的需求，因此我們可以透過動態欄位讓客戶自行制定最適合自己使用的欄位。</p>
+<h2 id='7a7a0c40c1'>動態欄位表單 (延伸欄位)</h2>
+<p>即從原本的表單額外添加的欄位，例如 <code>客戶</code> 的 <code>體重</code>，此種欄位屬於 <strong>動態欄位表單</strong></p>
+<h2 id='5e13432c83'>動態關聯表格 (關聯紀錄)</h2>
+<p>即從原本的表單添加 &quot;一對多&quot; 的關聯，例如 <code>客戶</code> 的 <code>購買紀錄</code>，即屬於 <strong>動態關聯表格</strong></p>
+<h2 id='5ffa6fd220'>目前套用在 [客戶] 以及 [工單]</h2>
+<p>目前 FirstLine 的 <strong>客戶</strong> 以及 <strong>工單</strong> 皆支援 <strong>動態欄位表單</strong> 和 <strong>動態關聯表格</strong></p>
+<h2 id='8485ba0e1e'>目前系統所有的動態欄位</h2>
 <p>目前系統所有的動態欄位</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/cz-col
@@ -1266,7 +1308,7 @@ id=2, name=&#39;血型&#39;</p>
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>Http Request</h3>
-<p><code>https://{API_DOMAIN}/api/v1/cz-col</code></p>
+<p><code>GET https://{API_DOMAIN}/api/v1/cz-col</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1291,12 +1333,130 @@ id=2, name=&#39;血型&#39;</p>
 <td>Number</td>
 <td>每頁呈現多少筆</td>
 </tr>
+<tr>
+<td>types</td>
+<td>false</td>
+<td>NULL</td>
+<td>Number</td>
+<td>0: 客戶表單 1: 客戶關聯表格 2: 工單表單 3: 工單關聯表格</td>
+</tr>
 </tbody></table>
-<h2 id='8de56c8b3e'>此客戶綁定的動態欄位</h2>
+<h1 id='5bd394b1a3'>動態欄位分類</h1><h2 id='ab12788b14'>所有動態欄位分類</h2>
+<p><code>GET https://{API_HOST}/api/v1/cz-col-category</code></p>
+<pre class="highlight shell tab-shell"><code>curl -X GET
+    -H <span class="s2">"Content-Type: application/json"</span>
+    https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/cz-col-category?xxxx
+</code></pre><h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>Array of objects</td>
+<td><a href="#czcolcategory"><code>動態欄位分類</code> 陣列</a></td>
+</tr>
+<tr>
+<td>meta</td>
+<td>Object</td>
+<td>Pagination meta</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>回傳的 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"唯一碼"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_allowed_null"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TESTCLICK__C"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_allowed_null"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creater"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"其他"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"勿擾"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_allowed_null"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"最後活動日期"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_allowed_null"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creater"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/cz-col-category?page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/cz-col-category?page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/cz-col-category"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='8de56c8b3e'>此客戶綁定的動態欄位</h2>
 <p>此客戶綁定的動態欄位</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1/cz-col
-</code></pre><h3 id='response-2'>Response</h3>
+</code></pre><h3 id='response'>Response</h3>
 <p><a href="#cz-col"><code>動態欄位</code></a></p>
 
 <blockquote>
@@ -1340,8 +1500,8 @@ id=2, name=&#39;血型&#39;</p>
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>Http Request</h3>
-<p><code>https://{API_DOMAIN}/api/v1/contact/{contact}/cz-col</code></p>
+</span></code></pre><h3 id='http-request'>Http Request</h3>
+<p><code>POST https://{API_DOMAIN}/api/v1/contact/{contact}/cz-col</code></p>
 <h3 id='url-parameters'>Url Parameters</h3>
 <table><thead>
 <tr>
@@ -1357,64 +1517,68 @@ id=2, name=&#39;血型&#39;</p>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶 的 id</td>
+<td><a href="#contact"><code>客戶</code></a> 的 id</td>
 </tr>
 </tbody></table>
-<h2 id='71e8a9d05d'>綁定並更新客戶的動態欄位之值</h2>
-<p>綁定並更新客戶的動態欄位之值</p>
-<pre class="highlight shell tab-shell"><code><span class="c"># POST|PUT</span>
-
-curl -X PUT
-    -H <span class="s2">"Content-Type: application/json"</span>
-    <span class="s1">'{"value":"Updated"}'</span>
-    https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1/cz-col/1
-</code></pre><h3 id='response-3'>Response</h3>
-<p><a href="#cz-col"><code>動態欄位</code></a></p>
-
+<h2 id='3d33539a00'>列出指定客戶關聯紀錄 ([客戶關聯紀錄] 即 [客戶動態關聯表格])</h2>
+<p><code>GET https://{API_HOST}/api/v1/contact/{contact}/contact-cz-relation</code></p>
+<pre class="highlight shell tab-shell"><code>curl -X GET
+    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1/contact-cz-relation
+</code></pre><h3 id='response'>Response</h3>
 <blockquote>
 <p>回傳 json 格式</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+<p><a href="#contactczrelation"><code>客戶動態關聯表格</code></a></p>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cyril223"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Assumenda est corrupti voluptas aut. Beatae quisquam ex asperiores sit ullam."</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_allowed_null"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 04:09:27"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 04:09:27"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"cz_col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geovany63"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dolorum rerum ut est quam unde recusandae consequatur. Nobis laudantium eum et voluptatem sunt sint. Et occaecati voluptas ut aliquid cum sed."</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_allowed_null"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 04:09:27"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-10 04:09:27"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"creater_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"cz_col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+            </span><span class="s2">"relation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">CzColCategory</span><span class="w"> </span><span class="err">(動態關聯分類)</span><span class="w"> </span><span class="err">的</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"relation_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"健康檢查"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"information"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"身高"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"體重"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-01"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"檢查時間"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-24 22:58:21"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-24 22:58:21"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/contact/2197607/contact-cz-relation?page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/contact/2197607/contact-cz-relation?page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/contact/2197607/contact-cz-relation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>Http Request</h3>
-<p><code>https://{API_DOMAIN}/api/v1/contact/{contact}/cz-col/{cz_col}</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+
+</span></code></pre><h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1429,14 +1593,112 @@ curl -X PUT
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶的 id</td>
+<td><a href="#contact">客戶</a> 的 id</td>
 </tr>
+</tbody></table>
+<h2 id='e5ebf12602'>對指定客戶增加關聯紀錄 (即客戶動態關聯表格)</h2>
+<p><code>POST https://{API_HOST}/api/v1/contact/{contact}/cz-col-category/{cz_col_category}/contact-cz-relation</code></p>
+
+<blockquote>
+<p>Form Data cz_cols</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cz_cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">身高欄位的</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">體重欄位的</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">檢查時間的欄位</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-01"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='response-2'>Response</h3>
+<p><a href="#contactczrelation"><code>客戶動態關聯表格</code></a></p>
+
+<p><a href="#contactczrelationinformation"><code>客戶動態關聯表格內容</code></a></p>
+
+<blockquote>
+<p>回傳 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"relation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">CzColCategory</span><span class="w"> </span><span class="err">(動態關聯分類)</span><span class="w"> </span><span class="err">的</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"relation_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"健康檢查"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"information"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"身高"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"體重"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-01"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"檢查時間"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-25 22:58:21"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-25 22:58:21"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/contact/2197607/contact-cz-relation?page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/contact/2197607/contact-cz-relation?page=1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://firstline.localhost/api/contact/2197607/contact-cz-relation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
 <tr>
-<td>cz_col</td>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact</td>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>動態欄位的 id</td>
+<td><a href="#contact">客戶</a> 的 id</td>
+</tr>
+<tr>
+<td>cz_col_category</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#czcolcategory">動態欄位分類</a> 的 id</td>
 </tr>
 </tbody></table>
 <h3 id='form-data'>Form Data</h3>
@@ -1450,11 +1712,255 @@ curl -X PUT
 </tr>
 </thead><tbody>
 <tr>
-<td>value</td>
+<td>cz_cols</td>
 <td>false</td>
 <td>NULL</td>
-<td>mix</td>
-<td>此客戶該動態欄位的值</td>
+<td>Array or Objects</td>
+<td>動態欄位，參數型態參考 <strong>CzCol</strong> 表格說明</td>
+</tr>
+</tbody></table>
+
+<p><strong>CzCol</strong></p>
+
+<p>此欄位為包含以下格式之陣列</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td>動態欄位的 id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>true</td>
+<td>NULL</td>
+<td>String</td>
+<td>動態欄位的值</td>
+</tr>
+</tbody></table>
+
+<p><strong>範例</strong></p>
+
+<p>假設目前有兩個動態欄位 (CzCol)，分別為</p>
+
+<ul>
+<li>id=1, name=&#39;體重&#39;</li>
+<li>id=2, name=&#39;血型&#39;</li>
+</ul>
+
+<p>則參數範例如右:</p>
+
+<blockquote>
+<p>Form data cz_cols</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">動態欄位</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="mi">1</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="err">身高</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"170"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">動態欄位</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="mi">2</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="err">體重</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='f823b2c5e9'>對指定客戶更新關聯紀錄 (即客戶動態關聯表格)</h2>
+<p><code>PUT https://{API_HOST}/api/v1/contact/{contact}/contact-cz-relation/{contact_cz_relation}</code></p>
+
+<blockquote>
+<p>Form Data cz_cols</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cz_cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">身高欄位的</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">178</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">體重欄位的</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">檢查時間的欄位</span><span class="w"> </span><span class="err">id</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-03"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre><h3 id='response-3'>Response</h3>
+<p><a href="#czrelation"><code>動態關聯表格</code></a></p>
+
+<blockquote>
+<p>回傳 json 格式</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"relation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">CzColCategory</span><span class="w"> </span><span class="err">的</span><span class="w"> </span><span class="err">id</span><span class="w">
+        </span><span class="s2">"relation_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"寶寶資料"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"information"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">178</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"身高"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"體重"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-02"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"col_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"col_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"檢查時間"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#contact">客戶</a> 的 id</td>
+</tr>
+<tr>
+<td>contact_cz_relation</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#contactczrelation">客戶動態關聯表格</a> 的 id</td>
+</tr>
+</tbody></table>
+<h3 id='form-data-2'>Form Data</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cz_cols</td>
+<td>false</td>
+<td>NULL</td>
+<td>Array<Object></td>
+<td>動態欄位，參數型態參考 <strong>CzCol</strong> 表格說明</td>
+</tr>
+</tbody></table>
+
+<p><strong>CzCol</strong></p>
+
+<p>此欄位為包含以下格式之陣列</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td>動態欄位的 id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>true</td>
+<td>NULL</td>
+<td>String</td>
+<td>動態欄位的值</td>
+</tr>
+</tbody></table>
+
+<p><strong>範例</strong></p>
+
+<p>假設目前有兩個動態欄位，分別為</p>
+
+<ul>
+<li>id=1, name=&#39;體重&#39;</li>
+<li>id=2, name=&#39;血型&#39;</li>
+</ul>
+
+<p>則參數範例如右:</p>
+
+<blockquote>
+<p>Form Data cz_cols</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">動態欄位</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="mi">1</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="err">身高</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"170"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">動態欄位</span><span class="w"> </span><span class="err">id</span><span class="p">:</span><span class="mi">2</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="err">體重</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='c6a901e4c4'>對指定客戶刪除關聯紀錄 (即客戶動態關聯表格)</h2>
+<p><code>DELETE https://{API_HOST}/api/v1/contact/{contact}/contact-cz-relation/{contact_cz_relation}</code></p>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE
+    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1/contact-cz-relation/1
+</code></pre>
+<blockquote>
+<p>回應 204 http status</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre><h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#contact">客戶</a> 的 id</td>
+</tr>
+<tr>
+<td>contact_cz_relation</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#contactczrelation">客戶動態關聯表格</a> 的 id</td>
 </tr>
 </tbody></table>
 <h1 id='de5111e659'>電話號碼</h1><h2 id='2a069cae23'>搜尋電話號碼</h2>
@@ -4807,6 +5313,98 @@ body 為 &#39;12345678&#39;
 <td>建立此動態欄位的 <a href="#employee"><code>員工</code></a></td>
 </tr>
 </tbody></table>
+<h2 id='czcolcategory'>動態欄位分類 (CzColCategory)</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>動態欄位分類 的 id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>動態欄位分類名稱</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Number</td>
+<td>動態欄位分類類型 {0: 客戶動態關聯表單 1: 客戶動態關聯表格 2: 工單動態關聯表單 3: 工單動態關聯表格}</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>動態欄位分類描述</td>
+</tr>
+<tr>
+<td>cols</td>
+<td>Array of objects</td>
+<td><a href="#czcol"><code>動態欄位</code></a></td>
+</tr>
+</tbody></table>
+<h2 id='contactczrelation'>客戶動態關聯表格 (ContactCzRelation)</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td><code>客戶動態關聯表格</code> id</td>
+</tr>
+<tr>
+<td>relation_id</td>
+<td>Number</td>
+<td><a href="#czcolcategory"><code>動態欄位分類</code></a> 的 id</td>
+</tr>
+<tr>
+<td>relation_name</td>
+<td>String</td>
+<td><a href="#czcolcategory"><code>動態欄位分類</code></a> 的名稱</td>
+</tr>
+<tr>
+<td>information</td>
+<td>Array of Objects</td>
+<td><a href="#contactczrelationinformation"><code>客戶動態關聯表格內容</code></a> 的陣列</td>
+</tr>
+</tbody></table>
+<h2 id='contactczrelationinformation'>客戶動態關聯表格內容 (ContactCzRelationInformation)</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td><code>客戶動態關聯表格內容</code>的 id</td>
+</tr>
+<tr>
+<td>value</td>
+<td>String</td>
+<td><code>客戶動態關聯表格內容</code>的值</td>
+</tr>
+<tr>
+<td>col_id</td>
+<td>Number</td>
+<td><a href="#czcol"><code>動態欄位</code> </a>的 id</td>
+</tr>
+<tr>
+<td>col_name</td>
+<td>String</td>
+<td><a href="#czcol"><code>動態欄位</code> </a>的名稱</td>
+</tr>
+</tbody></table>
 <h2 id='contact-tag'>客戶標籤 (Contact Tag)</h2>
 <table><thead>
 <tr>
@@ -5528,9 +6126,6 @@ body 為 &#39;12345678&#39;
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-          </div>
       </div>
     </div>
   </body>
