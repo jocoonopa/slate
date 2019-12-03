@@ -3,6 +3,8 @@
 ## 搜尋客戶
 `GET https://{API_HOST}/api/v1/contact?xxxx`
 
+考根據下方的 **Query Parameters** 表單的參數進行過濾篩選
+
 ```shell
 curl -X GET
     -H "Content-Type: application/json"
@@ -330,21 +332,25 @@ value | true | NULL | String | 動態欄位的值
 
 **範例**
 
-假設目前有兩個動態欄位，分別為
+假設目前有3個動態欄位，分別為
 
-- id=1, name='體重'
-- id=2, name='血型'
+- id=1, type=1 (字串), name='體重'
+- id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
+- id=3, type=7 (多選), name='從事運動', options (選項)=[{"text": "籃球", "value": 0}, {"text": "跑步", "value": 1}, {"text": "游泳", "value": 2}]
 
-則參數範例如右:
+則參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
 
 > Form Data cz_cols
 
 ```json
 [
-    {"id":1, "value":"18KG"}, // 1: 體重
-    {"id":2, "value": "AB型"} // 2: 血型
+    {"id":1, "value":"70"}, // 1: 體重
+    {"id":2, "value":"AB"}, // 2: 血型
+    {"id":3, "value": [1, 2]} // 3. 運動: 跑步+游泳
 ]
 ```
+
+
 
 ## 刪除客戶
 

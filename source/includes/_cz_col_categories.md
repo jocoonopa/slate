@@ -3,6 +3,9 @@
 ## 所有動態欄位分類
 `GET https://{API_HOST}/api/v1/cz-col-category`
 
+**type** 0 表示 `客戶動態欄位`, 1 表示 `客戶動態關聯表格`, 2 表示 `工單動態欄位`, 3 表示 `工單動態關聯表格`
+
+
 ```shell
 curl -X GET
     -H "Content-Type: application/json"

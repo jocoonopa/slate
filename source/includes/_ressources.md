@@ -76,7 +76,7 @@ name | String | 動態欄位的名稱
 description | String | 動態欄位的描述說明
 is_allowed_null | Boolean | 是否允許空值
 default | Object | 此動態欄位的預設值
-type | Number | 動態欄位的類型 <ul><li>0: 數字</li><li>1: 字串</li><li>2: 布林值</li><li>3: 日期</li><li>4: 時間</li><li>5: 日期時間</li></ul>
+type | Number | 動態欄位的類型 <ul><li>0: 數字</li><li>1: 字串</li><li>2: 布林值</li><li>3: 日期</li><li>4: 時間</li><li>5: 日期時間</li><li>6: 單選</li><li>7: 多選</li></ul>
 category_id | Number | 主分類的 id
 category | Object | <a href="#category">`主分類`</a>
 creater_id | Number | 建立此動態欄位的員工id

@@ -1,3 +1,5 @@
+# 客戶動態關聯表格
+
 ## 列出指定客戶關聯紀錄 ([客戶關聯紀錄] 即 [客戶動態關聯表格])
 
 `GET https://{API_HOST}/api/v1/contact/{contact}/contact-cz-relation`
@@ -6,6 +8,12 @@
 curl -X GET
     -H "Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..." https://{API_HOST}/api/v1/contact/1/contact-cz-relation
 ```
+
+假設目前有3個動態欄位，分別為
+
+- id=1, type=1 (字串), name='體重'
+- id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
+- id=3, type=7 (多選), name='檢查項目', options (選項)=[{"text": "X光", "value": 0}, {"text": "抽血", "value": 1}, {"text": "量身高", "value": 2}]
 
 ### Response
 
@@ -24,21 +32,21 @@ curl -X GET
             "information": [
                 {
                     "id": 1,
-                    "value": 180,
+                    "value": 70,
                     "col_id": 1,
-                    "col_name": "身高"
-                },
-                {
-                    "id": 2,
-                    "value": 80,
-                    "col_id": 2,
                     "col_name": "體重"
                 },
                 {
+                    "id": 2,
+                    "value": "A",
+                    "col_id": 2,
+                    "col_name": "血型"
+                },
+                {
                     "id": 3,
-                    "value": "2019-01-01",
+                    "value": [0,1],
                     "col_id": 3,
-                    "col_name": "檢查時間"
+                    "col_name": "檢查項目"
                 }
             ],
             "created_at": "2019-11-24 22:58:21",
@@ -73,29 +81,32 @@ contact | true | NULL | Number | <a href="#contact">客戶</a> 的 id
 
 `POST https://{API_HOST}/api/v1/contact/{contact}/cz-col-category/{cz_col_category}/contact-cz-relation`
 
-> Form Data cz_cols
+假設目前有3個動態欄位，分別為
+
+- id=1, type=1 (字串), name='體重'
+- id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
+- id=3, type=7 (多選), name='檢查項目', options (選項)=[{"text": "X光", "value": 0}, {"text": "抽血", "value": 1}, {"text": "量身高", "value": 2}]
 
 ```json
 
 {
     "cz_cols": [
         {
-            "id": 1, // 身高欄位的 id
-            "value": 180
+            "id":1,
+            "value":65
         },
         {
-            "id": 2, // 體重欄位的 id
-            "value": 75
+            "id":2,
+            "value":"A"
         },
         {
-            "id": 3, // 檢查時間的欄位 id
-            "value": "2019-02-01"
+            "id":3,
+            "value":[1,2]
         }
     ]
 }
 
 ```
-
 
 ### Response
 
@@ -116,21 +127,21 @@ contact | true | NULL | Number | <a href="#contact">客戶</a> 的 id
             "information": [
                 {
                     "id": 4,
-                    "value": 180,
+                    "value": 65,
                     "col_id": 1,
-                    "col_name": "身高"
-                },
-                {
-                    "id": 5,
-                    "value": 75,
-                    "col_id": 2,
                     "col_name": "體重"
                 },
                 {
+                    "id": 5,
+                    "value": "A",
+                    "col_id": 2,
+                    "col_name": "血型"
+                },
+                {
                     "id": 6,
-                    "value": "2019-02-01",
+                    "value": [1,2],
                     "col_id": 3,
-                    "col_name": "檢查時間"
+                    "col_name": "檢查項目"
                 }
             ],
             "created_at": "2019-11-25 22:58:21",
@@ -180,25 +191,19 @@ value | true | NULL | String | 動態欄位的值
 
 **範例**
 
-假設目前有兩個動態欄位 (CzCol)，分別為
+- id=1, type=1 (字串), name='體重'
+- id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
+- id=3, type=7 (多選), name='檢查項目', options (選項)=[{"text": "X光", "value": 0}, {"text": "抽血", "value": 1}, {"text": "量身高", "value": 2}]
 
-- id=1, name='體重'
-- id=2, name='血型'
+則參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
 
-則參數範例如右:
-
-> Form data cz_cols
+> Form Data cz_cols
 
 ```json
 [
-    {
-        "id":1, // 動態欄位 id:1 name:身高
-        "value":"170"
-    },
-    {
-        "id":2, // 動態欄位 id:2 name:體重
-        "value": "60"
-    }
+    {"id":1, "value":"65"}, // 1: 體重
+    {"id":2, "value":"A"}, // 2: 血型
+    {"id":3, "value": [1, 2]} // 3. 檢查項目: 抽血+量身高
 ]
 ```
 
@@ -213,16 +218,8 @@ value | true | NULL | String | 動態欄位的值
 {
     "cz_cols": [
         {
-            "id": 1, // 身高欄位的 id
-            "value": 178
-        },
-        {
-            "id": 2, // 體重欄位的 id
-            "value": 73
-        },
-        {
-            "id": 3, // 檢查時間的欄位 id
-            "value": "2019-02-03"
+            "id": 1, // 體重欄位的 id
+            "value": 55
         }
     ]
 }
@@ -246,21 +243,21 @@ value | true | NULL | String | 動態欄位的值
         "information": [
             {
                 "id": 4,
-                "value": 178,
+                "value": 55,
                 "col_id": 1,
-                "col_name": "身高"
-            },
-            {
-                "id": 5,
-                "value": 73,
-                "col_id": 2,
                 "col_name": "體重"
             },
             {
+                "id": 5,
+                "value": "A",
+                "col_id": 2,
+                "col_name": "血型"
+            },
+            {
                 "id": 6,
-                "value": "2019-02-02",
+                "value": [1,2],
                 "col_id": 3,
-                "col_name": "檢查時間"
+                "col_name": "檢查項目"
             }
         ]
     }
@@ -291,25 +288,19 @@ value | true | NULL | String | 動態欄位的值
 
 **範例**
 
-假設目前有兩個動態欄位，分別為
+- id=1, type=1 (字串), name='體重'
+- id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
+- id=3, type=7 (多選), name='從事運動', options (選項)=[{"text": "籃球", "value": 0}, {"text": "跑步", "value": 1}, {"text": "游泳", "value": 2}]
 
-- id=1, name='體重'
-- id=2, name='血型'
-
-則參數範例如右:
+則參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
 
 > Form Data cz_cols
 
 ```json
 [
-    {
-        "id":1, // 動態欄位 id:1 name:身高
-        "value":"170"
-    },
-    {
-        "id":2, // 動態欄位 id:2 name:體重
-        "value": "60"
-    }
+    {"id":1, "value":"70"}, // 1: 體重
+    {"id":2, "value":"AB"}, // 2: 血型
+    {"id":3, "value": [1, 2]} // 3. 運動: 跑步+游泳
 ]
 ```
 
