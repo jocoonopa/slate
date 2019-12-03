@@ -266,6 +266,9 @@
             <a href="#c4ab0655f7" class="toc-h1 toc-link" data-title="動態欄位">動態欄位</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#469fb16b34" class="toc-h2 toc-link" data-title="類型">類型</a>
+                  </li>
+                  <li>
                     <a href="#348b59dd8b" class="toc-h2 toc-link" data-title="動態表單欄位 (延伸欄位)">動態表單欄位 (延伸欄位)</a>
                   </li>
                   <li>
@@ -1254,11 +1257,20 @@ id=2, name=&#39;血型&#39;</p>
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>&lt;<a href="#contact"><code>客戶</code></a>的 id</td>
+<td><a href="#contact"><code>客戶</code></a>的 id</td>
 </tr>
 </tbody></table>
 <h1 id='c4ab0655f7'>動態欄位</h1>
 <p>鑑於客戶間商務邏輯的不同，勢必對於表單欄位的需求也會有差異，固定的表單欄位很難滿足所有客戶的需求，因此我們可以透過動態欄位讓客戶自行制定最適合自己使用的欄位。</p>
+<h2 id='469fb16b34'>類型</h2>
+<p>動態欄位共有整數，字串，布林值，日期，時間，日期時間，單選，多選等 8 種類別，依序對應數字
+0,1,2,3,4,5,6,7</p>
+
+<p>其中 <code>6(單選)</code> 以及 <code>7(多選)</code> 存在 options 欄位，此欄位以 json 格式紀錄選項，下面以血型為例</p>
+
+<p><code>[{&quot;text&quot;:&quot;A型&quot;, &quot;value&quot;: &quot;A&quot;},{&quot;text&quot;:&quot;B型&quot;, &quot;value&quot;: &quot;B&quot;},{&quot;text&quot;:&quot;AB型&quot;, &quot;value&quot;: &quot;AB&quot;},{&quot;text&quot;:&quot;O型&quot;, &quot;value&quot;: &quot;O&quot;}]</code></p>
+
+<p><code>動態表單</code>或是<code>動態表格</code>最後儲存的值為 <strong>value</strong></p>
 <h2 id='348b59dd8b'>動態表單欄位 (延伸欄位)</h2>
 <p>即從原本的表單額外添加的欄位，例如 <code>客戶</code> 的 <code>體重</code>，此種欄位屬於 <strong>動態表單欄位</strong></p>
 <h2 id='5e13432c83'>動態關聯表格 (關聯紀錄)</h2>
@@ -1787,7 +1799,7 @@ id=2, name=&#39;血型&#39;</p>
 <li>id=3, type=7 (多選), name=&#39;檢查項目&#39;, options (選項)=[{&quot;text&quot;: &quot;X光&quot;, &quot;value&quot;: 0}, {&quot;text&quot;: &quot;抽血&quot;, &quot;value&quot;: 1}, {&quot;text&quot;: &quot;量身高&quot;, &quot;value&quot;: 2}]</li>
 </ul>
 
-<p>則參數範例如右: (注意不論是<strong>單選</strong>還是<strong>多選</strong>，都是丟 value，若誤丟 text 會導致前端顯示出現問題)</p>
+<p>參數範例如右: (注意不論是<strong>單選</strong>還是<strong>多選</strong>，都是丟 value，若誤丟 text 會導致前端顯示出現問題)</p>
 
 <blockquote>
 <p>Form Data cz_cols</p>
@@ -1930,7 +1942,7 @@ id=2, name=&#39;血型&#39;</p>
 <li>id=3, type=7 (多選), name=&#39;從事運動&#39;, options (選項)=[{&quot;text&quot;: &quot;籃球&quot;, &quot;value&quot;: 0}, {&quot;text&quot;: &quot;跑步&quot;, &quot;value&quot;: 1}, {&quot;text&quot;: &quot;游泳&quot;, &quot;value&quot;: 2}]</li>
 </ul>
 
-<p>則參數範例如右: (注意不論是<strong>單選</strong>還是<strong>多選</strong>，都是丟 value，若誤丟 text 會導致前端顯示出現問題)</p>
+<p>參數範例如右: (注意不論是<strong>單選</strong>還是<strong>多選</strong>，都是丟 value，若誤丟 text 會導致前端顯示出現問題)</p>
 
 <blockquote>
 <p>Form Data cz_cols</p>

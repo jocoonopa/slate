@@ -381,5 +381,5 @@ curl -X DELETE
 
 Parameter | Description
 --------- | -----------
-id | <<a href="#contact">`客戶`</a>的 id
+id | <a href="#contact">`客戶`</a>的 id
 

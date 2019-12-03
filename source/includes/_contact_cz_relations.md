@@ -195,7 +195,7 @@ value | true | NULL | String | 動態欄位的值
 - id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
 - id=3, type=7 (多選), name='檢查項目', options (選項)=[{"text": "X光", "value": 0}, {"text": "抽血", "value": 1}, {"text": "量身高", "value": 2}]
 
-則參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
+參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
 
 > Form Data cz_cols
 
@@ -292,7 +292,7 @@ value | true | NULL | String | 動態欄位的值
 - id=2, type=6 (單選), name='血型', options (選項)=[{"text": "A型", "value":"A"},{"text": "B型", "value":"B"},{"text": "O型", "value":"O"},{"text": "AB型", "value":"AB"}]
 - id=3, type=7 (多選), name='從事運動', options (選項)=[{"text": "籃球", "value": 0}, {"text": "跑步", "value": 1}, {"text": "游泳", "value": 2}]
 
-則參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
+參數範例如右: (注意不論是**單選**還是**多選**，都是丟 value，若誤丟 text 會導致前端顯示出現問題)
 
 > Form Data cz_cols
 
