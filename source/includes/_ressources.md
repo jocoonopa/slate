@@ -54,6 +54,7 @@ profile | Object | <a href="#profile">`客戶個資物件`</a>
 sponsor | Object | <a href="#sponsor">`業主`</a>
 sponsor_id | Number | 業主id
 campaign_queues | Array of objects | **此欄位請忽略，尚未具備正式功能**
+email_contacts | Array of objects | <a href="#emailcontact">`客戶電子信箱`陣列</a>
 fbs | Array of objects | **此欄位請忽略，尚未具備正式功能**
 lines | Array of objects | **此欄位請忽略，尚未具備正式功能**
 cz_cols | Array of objects | <a href="#cz-col">`客戶的動態欄位`陣列</a>
@@ -66,6 +67,17 @@ Property | Type | Description
 -------- | ---- | -----------
 id | Number | 客戶個資物件的 id，會被用來撈取住址，電話
 phones | Array of object | <a href="#phone-number">`電話`陣列</a>
+
+## 電子信箱 (EmailContact)
+
+Property | Type | Description
+-------- | ---- | -----------
+id | Number | 電子郵件信箱 id
+contact_id | Number | 所屬 <a href="#contact">`客戶`</a> 的id
+address | String | 電子郵件位址
+draft | String | 草稿
+name | String | 自定義的電子信箱別名
+description | String | 電子信箱描述
 
 ## 動態欄位 (CzCol)
 

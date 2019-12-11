@@ -440,6 +440,9 @@
                     <a href="#profile" class="toc-h2 toc-link" data-title="客戶個資物件 (Profile)">客戶個資物件 (Profile)</a>
                   </li>
                   <li>
+                    <a href="#emailcontact" class="toc-h2 toc-link" data-title="電子信箱 (EmailContact)">電子信箱 (EmailContact)</a>
+                  </li>
+                  <li>
                     <a href="#czcol" class="toc-h2 toc-link" data-title="動態欄位 (CzCol)">動態欄位 (CzCol)</a>
                   </li>
                   <li>
@@ -682,6 +685,7 @@
                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"email_contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
             </span><span class="s2">"cz_cols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -5232,6 +5236,11 @@ body 為 &#39;12345678&#39;
 <td><strong>此欄位請忽略，尚未具備正式功能</strong></td>
 </tr>
 <tr>
+<td>email_contacts</td>
+<td>Array of objects</td>
+<td><a href="#emailcontact"><code>客戶電子信箱</code>陣列</a></td>
+</tr>
+<tr>
 <td>fbs</td>
 <td>Array of objects</td>
 <td><strong>此欄位請忽略，尚未具備正式功能</strong></td>
@@ -5274,6 +5283,45 @@ body 為 &#39;12345678&#39;
 <td>phones</td>
 <td>Array of object</td>
 <td><a href="#phone-number"><code>電話</code>陣列</a></td>
+</tr>
+</tbody></table>
+<h2 id='emailcontact'>電子信箱 (EmailContact)</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>電子郵件信箱 id</td>
+</tr>
+<tr>
+<td>contact_id</td>
+<td>Number</td>
+<td>所屬 <a href="#contact"><code>客戶</code></a> 的id</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>電子郵件位址</td>
+</tr>
+<tr>
+<td>draft</td>
+<td>String</td>
+<td>草稿</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>自定義的電子信箱別名</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>電子信箱描述</td>
 </tr>
 </tbody></table>
 <h2 id='czcol'>動態欄位 (CzCol)</h2>

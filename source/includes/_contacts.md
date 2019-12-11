@@ -38,6 +38,7 @@ meta | Object | Pagination meta
                 "id": 1,
                 "phones": []
             },
+            "email_contacts": [],
             "cz_cols": [
                 {
                     "id": 1,
