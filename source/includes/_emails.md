@@ -89,7 +89,7 @@ address | false | NULL | String | Email 位址
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#email">`電子信箱`陣列</a>
+data | Array of objects | <a href="#emailcontact">`電子信箱`陣列</a>
 meta | Object | Pagination meta
 
 ## 新增電子信箱
