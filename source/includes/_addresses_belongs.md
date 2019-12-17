@@ -40,7 +40,7 @@ meta | Object | Pagination meta
 ```
 
 ### Http Request
-`GET https://{API_DOMAIN}/api/v1/city`
+`GET https://{API_DOMAIN}/api/v1/state`
 
 ### Parameters
 
