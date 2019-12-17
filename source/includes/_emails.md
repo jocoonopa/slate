@@ -111,81 +111,27 @@ curl -X POST
 
 ```json
 {
-    "data": [
-        {
+    "data": {
+        "id": 3,
+        "address": "loren18@ortiz.biz",
+        "contact_id": 1,
+        "draft": null,
+        "name": "Theresia Zieme",
+        "description": null,
+        "contact": {
             "id": 1,
-            "address": "harvey.bartholome@gmail.com",
-            "contact_id": 1,
-            "draft": null,
-            "name": "Jaiden Champlin III",
-            "description": "Pariatur dolorem aut voluptatibus. Aut pariatur voluptatum ratione atque sit. Et inventore quo voluptates animi.",
-            "contact": {
-                "id": 1,
-                "membership_no": "8771639",
-                "identity_no": "418099",
-                "first_name": "Angelita",
-                "last_name": "D'Amore",
-                "gender": 0,
-                "birth_at": "1985-08-27 00:00:00",
-                "created_at": "2019-04-10 03:01:41",
-                "updated_at": "2019-04-10 03:01:41",
-                "profile_id": 1,
-                "sponsor_id": null,
-                "disturb_setting": null
-            }
-        },
-        {
-            "id": 3,
-            "address": "loren18@ortiz.biz",
-            "contact_id": 1,
-            "draft": null,
-            "name": "Theresia Zieme",
-            "description": null,
-            "contact": {
-                "id": 1,
-                "membership_no": "8771639",
-                "identity_no": "418099",
-                "first_name": "Angelita",
-                "last_name": "D'Amore",
-                "gender": 0,
-                "birth_at": "1985-08-27 00:00:00",
-                "created_at": "2019-04-10 03:01:41",
-                "updated_at": "2019-04-10 03:01:41",
-                "profile_id": 1,
-                "sponsor_id": null,
-                "disturb_setting": null
-            }
-        },
-        {
-            "id": 5,
-            "address": "shyanne47@hotmail.com",
-            "contact_id": 1,
-            "draft": null,
-            "name": "Mikayla Funk",
-            "description": "Possimus optio molestiae perspiciatis distinctio. Vel incidunt ut unde. Laudantium eaque distinctio officia eum error odit.",
-            "contact": {
-                "id": 1,
-                "membership_no": "8771639",
-                "identity_no": "418099",
-                "first_name": "Angelita",
-                "last_name": "D'Amore",
-                "gender": 0,
-                "birth_at": "1985-08-27 00:00:00",
-                "created_at": "2019-04-10 03:01:41",
-                "updated_at": "2019-04-10 03:01:41",
-                "profile_id": 1,
-                "sponsor_id": null,
-                "disturb_setting": null
-            }
+            "membership_no": "8771639",
+            "identity_no": "418099",
+            "first_name": "Angelita",
+            "last_name": "D'Amore",
+            "gender": 0,
+            "birth_at": "1985-08-27 00:00:00",
+            "created_at": "2019-04-10 03:01:41",
+            "updated_at": "2019-04-10 03:01:41",
+            "profile_id": 1,
+            "sponsor_id": null,
+            "disturb_setting": null
         }
-    ],
-    "meta": {
-        "current_page": 1,
-        "from": 1,
-        "last_page": 1,
-        "per_page": 15,
-        "to": 3,
-        "total": 3
     }
 }
 ```
@@ -202,6 +148,61 @@ address | true | NULL | String | 電子信箱地址
 name | false | NULL | String | 電子信箱自定義名稱
 description | false | NULL | String | 電子信箱自定義描述
 
+## 更新指定電子信箱
+
+更新指定電子信箱
+
+```shell
+curl -X PUT
+    -H "Content-Type: application/json"
+    '{"name":"Sharon"}'
+    https://{API_HOST}/api/v1/email-contact/1
+```
+
+### Response
+
+<a href="#email">`電子信箱`</a>
+
+> 回傳 json 格式
+
+```json
+{
+    "data": {
+        "id": 3,
+        "address": "loren18@ortiz.biz",
+        "contact_id": 1,
+        "draft": null,
+        "name": "Sharon",
+        "description": null,
+        "contact": {
+            "id": 1,
+            "membership_no": "8771639",
+            "identity_no": "418099",
+            "first_name": "Angelita",
+            "last_name": "D'Amore",
+            "gender": 0,
+            "birth_at": "1985-08-27 00:00:00",
+            "created_at": "2019-04-10 03:01:41",
+            "updated_at": "2019-11-10 03:01:41",
+            "profile_id": 1,
+            "sponsor_id": null,
+            "disturb_setting": null
+        }
+    }
+}
+```
+
+### Http Request
+`PUT https://{API_DOMAIN}/api/v1/email-contact/{email_contact}`
+
+### Parameters
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+address | true | NULL | String | 電子信箱地址
+name | false | NULL | String | 電子信箱自定義名稱
+description | false | NULL | String | 電子信箱自定義描述
+
 ## 刪除電子信箱
 
 刪除指定客戶的電子信箱
@@ -214,12 +215,10 @@ curl -X DELETE
 
 > 回傳 json 格式
 
+http status: 204
+
 ```json
-{
-    "data": {
-        "status": 200,
-    }
-}
+{}
 ```
 
 ### Http Request
