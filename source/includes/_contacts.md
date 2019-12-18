@@ -38,99 +38,7 @@ meta | Object | Pagination meta
                 "id": 1,
                 "phones": []
             },
-            "email_contacts": [],
-            "cz_cols": [
-                {
-                    "id": 1,
-                    "value": "19999",
-                    "category_id": 1
-                },
-                {
-                    "id": 4,
-                    "value": "51",
-                    "category_id": 1
-                },
-                {
-                    "id": 5,
-                    "value": null,
-                    "category_id": 1
-                },
-                {
-                    "id": 6,
-                    "value": null,
-                    "category_id": 1
-                },
-                {
-                    "id": 7,
-                    "value": null,
-                    "category_id": 1
-                },
-                {
-                    "id": 8,
-                    "value": null,
-                    "category_id": 1
-                },
-                {
-                    "id": 12,
-                    "value": null,
-                    "category_id": 1
-                },
-                {
-                    "id": 21,
-                    "value": null,
-                    "category_id": 1
-                },
-                {
-                    "id": 2,
-                    "value": null,
-                    "category_id": 2
-                },
-                {
-                    "id": 20,
-                    "value": null,
-                    "category_id": 2
-                },
-                {
-                    "id": 3,
-                    "value": null,
-                    "category_id": 6
-                },
-                {
-                    "id": 9,
-                    "value": null,
-                    "category_id": 7
-                },
-                {
-                    "id": 10,
-                    "value": null,
-                    "category_id": 7
-                },
-                {
-                    "id": 11,
-                    "value": null,
-                    "category_id": 7
-                },
-                {
-                    "id": 13,
-                    "value": null,
-                    "category_id": 8
-                },
-                {
-                    "id": 14,
-                    "value": null,
-                    "category_id": 8
-                },
-                {
-                    "id": 15,
-                    "value": null,
-                    "category_id": 8
-                },
-                {
-                    "id": 16,
-                    "value": "0",
-                    "category_id": 9
-                }
-            ],
+            "email_contacts": []
         }
     ],
     "meta": {
@@ -176,6 +84,151 @@ val | false | NULL | Number|String | 欲比對的值
 
 **範例**
 `[{"id":1, "op":">", "val": 10}, {"id":1, "op":"<", "val": 20}]`
+
+<!-- ///開始分隔線 -->
+## 取得客戶
+
+```shell
+curl -X get
+    -H "Content-Type: application/json"
+    https://{API_HOST}/api/v1/contact/1
+```
+
+### Response
+
+請參考<a href="#contact">`客戶`</a>回應格式
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Object | <a href="#contact">`客戶`</a>
+
+> 回傳 json 格式
+
+```json
+
+{
+    "data": {
+        "id": 1,
+        "name": "Angelita D'Amore",
+        "first_name": "Angelita",
+        "last_name": "D'Amore",
+        "membership_no": "8771639",
+        "identity_no": "418099",
+        "gender": 0,
+        "birth_at": "1985-08-27",
+        "profile_id": 1,
+        "profile": {
+            "id": 1,
+            "phones": []
+        },
+        "email_contacts": [],
+        "cz_cols": [
+            {
+                "id": 1,
+                "value": "19999",
+                "category_id": 1
+            },
+            {
+                "id": 4,
+                "value": "51",
+                "category_id": 1
+            },
+            {
+                "id": 5,
+                "value": null,
+                "category_id": 1
+            },
+            {
+                "id": 6,
+                "value": null,
+                "category_id": 1
+            },
+            {
+                "id": 7,
+                "value": null,
+                "category_id": 1
+            },
+            {
+                "id": 8,
+                "value": null,
+                "category_id": 1
+            },
+            {
+                "id": 12,
+                "value": null,
+                "category_id": 1
+            },
+            {
+                "id": 21,
+                "value": null,
+                "category_id": 1
+            },
+            {
+                "id": 2,
+                "value": null,
+                "category_id": 2
+            },
+            {
+                "id": 20,
+                "value": null,
+                "category_id": 2
+            },
+            {
+                "id": 3,
+                "value": null,
+                "category_id": 6
+            },
+            {
+                "id": 9,
+                "value": null,
+                "category_id": 7
+            },
+            {
+                "id": 10,
+                "value": null,
+                "category_id": 7
+            },
+            {
+                "id": 11,
+                "value": null,
+                "category_id": 7
+            },
+            {
+                "id": 13,
+                "value": null,
+                "category_id": 8
+            },
+            {
+                "id": 14,
+                "value": null,
+                "category_id": 8
+            },
+            {
+                "id": 15,
+                "value": null,
+                "category_id": 8
+            },
+            {
+                "id": 16,
+                "value": "0",
+                "category_id": 9
+            }
+        ]
+    }
+}
+
+```
+
+### Http Request
+`GET https://{API_DOMAIN}/api/v1/contact/{contact}`
+
+### URL Parameters
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+contact | True | NULL | Number | <a href="#contact">`客戶`</a>的 id
+<!-- 結束分隔線/// -->
+
 
 ## 新增客戶
 
@@ -365,13 +418,11 @@ curl -X DELETE
 
 > 回應的 json 格式
 
+Http status 為 `204`
+
 ```json
 
-{
-    "data": {
-        "status": 204,
-    }
-}
+{}
 
 ```
 

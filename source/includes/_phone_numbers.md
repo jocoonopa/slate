@@ -74,6 +74,58 @@ Property | Type | Description
 data | Array of objects | <a href="#phone-number">`電話號碼`陣列</a>
 meta | Object | Pagination meta
 
+<!-- ///開始分隔線 -->
+## 取得電話號碼
+
+```shell
+curl -X GET
+    -H "Content-Type: application/json"
+    https://{API_HOST}/api/v1/245621
+```
+
+### Response
+
+請參考<a href="#phone-number">`電話號碼`</a>的回應格式
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Object | <a href="#phone-number">`電話號碼`</a>
+
+> 回傳 json 格式
+
+```json
+
+{
+    "data": {
+        "id": 245621,
+        "type": 0,
+        "extension": null,
+        "number": "0928846763",
+        "description": null,
+        "profile_id": 1935008,
+        "phone_contact": {
+            "id": 480,
+            "contact_id": 1935038,
+            "phone_number_id": 245621,
+            "is_visible": true
+        }
+    }
+}
+
+```
+
+### Http Request
+` https://{API_DOMAIN}/api/v1/phone-number/{phone_number}`
+
+### URL Parameters
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+phone_number | true | NULL | Number | <<a href="#phone-number">電話號碼</a>的id
+
+<!-- 結束分隔線/// -->
+
+
 ## 新增電話號碼
 
 新增電話號碼
@@ -174,12 +226,10 @@ curl -X DELETE
 
 > 回傳 json 格式
 
+Http status 為 204
+
 ```json
-{
-    "data": {
-        "status": 200
-    }
-}
+{}
 ```
 
 ### Http Request

@@ -414,6 +414,8 @@ termination_code_ids | false | NULL | Array<Number> | 狀態細項 id 陣列
 handler_ids | false | NULL |  Array<Number> | 處理工單的員工之 id 陣列
 creater_ids | false | NULL |  Array<Number> | 建立工單的員工之 id 陣列
 
+## 取得工單
+
 ## 新建工單
 
 新建工單
@@ -427,68 +429,73 @@ curl -X POST
 
 ### Response
 
-<a href="#ticket">請參考`工單`回應格式</a>
+請參考<a href="#ticket">`工單`</a>回應格式
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Object | <a href="#ticket">`工單`</a>
 
 > 回傳 json 格式
 
 ```json
-
 {
-    "id": 1,
-    "subject": "標題",
-    "content": "內容",
-    "due_at": null,
-    "status": 2,
-    "status_memo": null,
-    "priority": 0,
-    "contact": {
+    "data" : {
         "id": 1,
-        "name": "艾 魁爾",
-        "first_name": "艾",
-        "last_name": "魁爾",
-        "membership_no": null,
-        "identity_no": "A123456789",
-        "gender": 0,
-        "birth_at": "1987-10-10",
-        "profile_id": 3,
-        "sponsor_id": 1,
-        "disturb_setting": null
-    },
-    "contact_id": 1,
-    "sub_category": {
-        "id": 1,
-        "name": "時效",
-        "description": null,
+        "subject": "標題",
+        "content": "內容",
+        "due_at": null,
+        "status": 2,
+        "status_memo": null,
+        "priority": 0,
+        "contact": {
+            "id": 1,
+            "name": "艾 魁爾",
+            "first_name": "艾",
+            "last_name": "魁爾",
+            "membership_no": null,
+            "identity_no": "A123456789",
+            "gender": 0,
+            "birth_at": "1987-10-10",
+            "profile_id": 3,
+            "sponsor_id": 1,
+            "disturb_setting": null
+        },
+        "contact_id": 1,
+        "sub_category": {
+            "id": 1,
+            "name": "時效",
+            "description": null,
+            "category": {
+                "id": 1,
+                "name": "理賠相關",
+                "description": null
+            },
+            "category_id": 1
+        },
+        "sub_category_id": 1,
+        "handler_id": null,
+        "handler": null,
+        "sponsor_id": null,
+        "sponsor": null,
+        "campaign_queue": null,
+        "campaign_queue_id": null,
+        "created_at": "2019-04-16 14:22:13",
+        "updated_at": "2019-04-17 12:39:53",
+        "termination_code_id": 5,
+        "termination_code": {
+            "id": 5,
+            "name": "確認可否處理",
+            "description": null,
+            "status": 0,
+            "creater_id": null
+        },
         "category": {
             "id": 1,
             "name": "理賠相關",
             "description": null
         },
         "category_id": 1
-    },
-    "sub_category_id": 1,
-    "handler_id": null,
-    "handler": null,
-    "sponsor_id": null,
-    "sponsor": null,
-    "campaign_queue": null,
-    "campaign_queue_id": null,
-    "created_at": "2019-04-16 14:22:13",
-    "updated_at": "2019-04-17 12:39:53",
-    "termination_code_id": 5,
-    "termination_code": {
-        "id": 5,
-        "name": "確認可否處理",
-        "description": null,
-        "status": 0,
-        "creater_id": null
-    },
-    "category": {
-        "id": 1,
-        "name": "理賠相關",
-        "description": null
-    },
-    "category_id": 1
+    }
 }
 
 ```
@@ -715,13 +722,11 @@ curl -X DELETE
 
 > 回傳 json 格式
 
+Http status 為 204
+
 ```json
 
-{
-    "data": {
-        "status": 200,
-    }
-}
+{}
 
 ```
 

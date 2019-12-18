@@ -92,6 +92,66 @@ Property | Type | Description
 data | Array of objects | <a href="#emailcontact">`電子信箱`陣列</a>
 meta | Object | Pagination meta
 
+<!-- ///開始分隔線 -->
+## 取得指定電子信箱
+
+```shell
+curl -X GET
+    -H "Content-Type: application/json"
+    https://{API_HOST}/api/v1/email-contact/1
+```
+
+### Response
+
+請參考<a href="#emailcontact">`電子信箱`</a>回應格式
+
+Property | Type | Description
+-------- | ---- | -----------
+data | Object | <a href="#emailcontact">`電子信箱`</a>
+
+> 回傳 json 格式
+
+```json
+
+{
+    "data": {
+        "id": 1,
+        "address": "harvey.bartholome@gmail.com",
+        "contact_id": 1,
+        "draft": null,
+        "name": "Jaiden Champlin III",
+        "description": "Pariatur dolorem aut voluptatibus. Aut pariatur voluptatum ratione atque sit. Et inventore quo voluptates animi.",
+        "contact": {
+            "id": 1,
+            "membership_no": "8771639",
+            "identity_no": "418099",
+            "first_name": "Angelita",
+            "last_name": "D'Amore",
+            "gender": 0,
+            "birth_at": "1985-08-27 00:00:00",
+            "created_at": "2019-04-10 03:01:41",
+            "updated_at": "2019-04-10 03:01:41",
+            "profile_id": 1,
+            "sponsor_id": null,
+            "disturb_setting": null
+        }
+    }
+}
+
+```
+
+### Http Request
+` https://{API_DOMAIN}/api/v1/email-contact/{email_contact}`
+
+### URL Parameters
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+email_contact | True | Null | Number | <a href="#emailcontact">電子信箱</a>的 id
+
+<!-- 結束分隔線/// -->
+
+
 ## 新增電子信箱
 
 指定客戶新增電子信箱
