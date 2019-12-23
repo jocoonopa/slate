@@ -114,7 +114,7 @@ meta | Object | Pagination meta
 ```
 
 ### Http Request
-`GET https://{API_DOMAIN}/api/v1/city`
+`GET https://{API_DOMAIN}/api/v1/state`
 
 ### Parameters
 
@@ -201,3 +201,6 @@ Parameter | Required | Default | Type | Description
 page | false | 1 | Number | 目前在第幾頁
 per_page | false | 15 | Number | 每頁呈現多少筆
 name | false | NULL | String | 區名稱
+state_id | false | NULL | Number | <a href="#state">縣市</a>的 id
+zipcode | false | NULL | Number | 郵遞區號
+name | false | NULL | String | 郵遞區名
