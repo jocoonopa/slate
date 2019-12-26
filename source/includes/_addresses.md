@@ -248,8 +248,8 @@ Parameter | Required | Default | Type | Description
 contact_id | true | NULL | Number | 客戶的 id
 type | true | NULL | Number | 0:住家,1:郵寄,2:帳單,3:快遞,4:現居,5:其他
 address | true | NULL | String | 地址
-country_id | true | NULL | Number | 國家的id
-state_id | true | NULL | Number | 城市的id
+country_id | false | NULL | Number | 國家的id
+state_id | false | NULL | Number | 城市的id
 city_id | false | NULL | Number | 區域的id
 description | false | NULL | String | 地址描述
 
