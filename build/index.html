@@ -311,6 +311,9 @@
                   <li>
                     <a href="#c6a901e4c4" class="toc-h2 toc-link" data-title="對指定客戶刪除關聯紀錄 (即客戶動態關聯表格)">對指定客戶刪除關聯紀錄 (即客戶動態關聯表格)</a>
                   </li>
+                  <li>
+                    <a href="#521a95f448" class="toc-h2 toc-link" data-title="對指定客戶刪除所有指定分類下的關聯紀錄 (即客戶動態關聯表格)">對指定客戶刪除所有指定分類下的關聯紀錄 (即客戶動態關聯表格)</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2073,6 +2076,39 @@ id=2, name=&#39;血型&#39;</p>
 <td>NULL</td>
 <td>Number</td>
 <td><a href="#contactczrelation">客戶動態關聯表格</a> 的 id</td>
+</tr>
+</tbody></table>
+<h2 id='521a95f448'>對指定客戶刪除所有指定分類下的關聯紀錄 (即客戶動態關聯表格)</h2>
+<p><code>DELETE https://{API_HOST}/api/v1/contact/{contact}/cz-col-category/{cz_col_category}</code></p>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE
+    -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1/cz-col-category/1
+</code></pre>
+<blockquote>
+<p>回應 204 http status</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre><h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contact</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#contact">客戶</a> 的 id</td>
+</tr>
+<tr>
+<td>cz_col_category</td>
+<td>true</td>
+<td>NULL</td>
+<td>Number</td>
+<td><a href="#czcolcategory">動態欄位分類</a> 的 id</td>
 </tr>
 </tbody></table>
 <h1 id='de5111e659'>電話號碼</h1><h2 id='2a069cae23'>搜尋電話號碼</h2>

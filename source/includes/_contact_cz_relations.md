@@ -327,3 +327,25 @@ contact | true | NULL | Number | <a href="#contact">客戶</a> 的 id
 contact_cz_relation | true | NULL | Number | <a href="#contactczrelation">客戶動態關聯表格</a> 的 id
 
 
+## 對指定客戶刪除所有指定分類下的關聯紀錄 (即客戶動態關聯表格)
+
+`DELETE https://{API_HOST}/api/v1/contact/{contact}/cz-col-category/{cz_col_category}`
+
+```shell
+curl -X DELETE
+    -H "Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..." https://{API_HOST}/api/v1/contact/1/cz-col-category/1
+```
+
+> 回應 204 http status
+
+```json
+```
+
+### URL Parameters
+
+Parameter | Required | Default | Type | Description
+--------- | -------- | ------- | ---- | -----------
+contact | true | NULL | Number | <a href="#contact">客戶</a> 的 id
+cz_col_category | true | NULL | Number | <a href="#czcolcategory">動態欄位分類</a> 的 id
+
+
