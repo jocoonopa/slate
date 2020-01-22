@@ -60,7 +60,7 @@ Parameter | Required | Default | Type | Description
 page | false | 1 | Number | 目前在第幾頁
 per_page | false | 15 | Number | 每頁呈現多少筆
 id | false | NULL | Number|Array | 客戶的 id
-gender | false | NULL | Number | 0: 女性, 1: 男性
+gender | false | NULL | Number | 1: 女性, 0: 男性
 birth_at__start | false | NULL | Date |生日(開始)
 birth_at__end | false | NULL | Date | 生日(結束)
 search | false | NULL | String | 針對電話號碼，會員編號，身分證，姓名進行模糊搜尋
