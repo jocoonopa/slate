@@ -34,7 +34,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#ticket">`工單`陣列</a>
+data | Array of objects | <a href="#ticket">工單陣列</a>
 meta | Object | Pagination meta
 
 > 回傳 json 格式
@@ -549,7 +549,7 @@ curl -X GET
 
 ### Response
 
-<a href="#ticket">請參考`工單`回應格式</a>
+<a href="#ticket">請參考工單回應格式</a>
 
 > 回傳 json 格式
 
@@ -771,7 +771,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#employee">`員工`陣列</a>
+data | Array of objects | <a href="#employee">員工陣列</a>
 meta | Object | Pagination meta
 
 > json
@@ -933,7 +933,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#sponsor">`業主`陣列</a>
+data | Array of objects | <a href="#sponsor">業主陣列</a>
 meta | Object | Pagination meta
 
 > json
@@ -978,7 +978,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#ticket-termination-code">`工單狀態細項`陣列</a>
+data | Array of objects | <a href="#ticket-termination-code">工單狀態細項陣列</a>
 meta | Object | Pagination meta
 
 ### Response
@@ -1089,7 +1089,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#category">`主分類`陣列</a>
+data | Array of objects | <a href="#category">主分類陣列</a>
 meta | Object | Pagination meta
 
 > json 回傳格式
@@ -1199,7 +1199,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#sub-category">`子分類`陣列</a>
+data | Array of objects | <a href="#sub-category">子分類陣列</a>
 meta | Object | Pagination meta
 
 > json 回傳格式

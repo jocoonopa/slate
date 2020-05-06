@@ -123,7 +123,7 @@ description | false | NULL | String | 地址描述
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#address">`地址`陣列</a>
+data | Array of objects | <a href="#address">地址陣列</a>
 meta | Object | Pagination meta
 
 
@@ -133,7 +133,7 @@ meta | Object | Pagination meta
 <!-- ///開始分隔線 -->
 ## 取得指定聯絡地址
 
-```shell
+``shell
 curl -X GET
     -H "Content-Type: application/json"
     https://{API_HOST}/api/v1/address/1
