@@ -16,7 +16,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#czcolcategory">`動態欄位分類` 陣列</a>
+data | Array of objects | <a href="#czcolcategory">動態欄位分類 陣列</a>
 meta | Object | Pagination meta
 
 > 回傳的 json 格式

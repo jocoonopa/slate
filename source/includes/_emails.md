@@ -89,7 +89,7 @@ address | false | NULL | String | Email 位址
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#emailcontact">`電子信箱`陣列</a>
+data | Array of objects | <a href="#emailcontact">電子信箱陣列</a>
 meta | Object | Pagination meta
 
 <!-- ///開始分隔線 -->
@@ -103,11 +103,11 @@ curl -X GET
 
 ### Response
 
-請參考<a href="#emailcontact">`電子信箱`</a>回應格式
+請參考<a href="#emailcontact">電子信箱</a>回應格式
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Object | <a href="#emailcontact">`電子信箱`</a>
+data | Object | <a href="#emailcontact">電子信箱</a>
 
 > 回傳 json 格式
 
@@ -165,7 +165,7 @@ curl -X POST
 
 ### Response
 
-<a href="#email">`電子信箱`</a>
+<a href="#email">電子信箱</a>
 
 > 回傳 json 格式
 
@@ -221,7 +221,7 @@ curl -X PUT
 
 ### Response
 
-<a href="#email">`電子信箱`</a>
+<a href="#email">電子信箱</a>
 
 > 回傳 json 格式
 

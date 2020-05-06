@@ -38,7 +38,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#czcol">`動態欄位`陣列</a>
+data | Array of objects | <a href="#czcol">動態欄位陣列</a>
 meta | Object | Pagination meta
 
 > 回傳 json 格式
@@ -79,5 +79,5 @@ Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
 page | false | 1 | Number | 目前在第幾頁
 per_page | false | 15 | Number | 每頁呈現多少筆
-category_id | false | NULL | Number | <a href="#czcolcategory">`動態欄位分類`</a> 的 id
+category_id | false | NULL | Number | <a href="#czcolcategory">動態欄位分類</a> 的 id
 types | false | NULL | Number | 0: 客戶動態表單欄位 1: 客戶動態關聯表格 2: 工單動態表單欄位 3: 工單動態關聯表格

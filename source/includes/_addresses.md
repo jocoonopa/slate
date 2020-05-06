@@ -141,11 +141,11 @@ curl -X GET
 
 ### Response
 
-請參考<a href="#address">`地址`</a>回應格式
+請參考<a href="#address">地址</a>回應格式
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Object | <a href="#address">`地址`</a>
+data | Object | <a href="#address">地址</a>
 
 > 回傳 json 格式
 
@@ -266,7 +266,7 @@ curl -X PUT
 
 ### Response
 
-<a href="#address">`地址`</a>
+<a href="#address">地址</a>
 
 > 回傳 json 格式
 

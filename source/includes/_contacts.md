@@ -15,7 +15,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#contact">`客戶`陣列</a>
+data | Array of objects | <a href="#contact">客戶陣列</a>
 meta | Object | Pagination meta
 
 > 回傳的 json 格式
@@ -59,7 +59,7 @@ Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
 page | false | 1 | Number | 目前在第幾頁
 per_page | false | 15 | Number | 每頁呈現多少筆
-id | false | NULL | Number|Array | 客戶的 id
+id | false | NULL | Number|Array | 客戶的 ID
 gender | false | NULL | Number | 1: 女性, 0: 男性
 birth_at__start | false | NULL | Date |生日(開始)
 birth_at__end | false | NULL | Date | 生日(結束)
@@ -96,11 +96,11 @@ curl -X get
 
 ### Response
 
-請參考<a href="#contact">`客戶`</a>回應格式
+請參考<a href="#contact">客戶</a>回應格式
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Object | <a href="#contact">`客戶`</a>
+data | Object | <a href="#contact">客戶</a>
 
 > 回傳 json 格式
 
@@ -226,7 +226,7 @@ data | Object | <a href="#contact">`客戶`</a>
 
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
-contact | True | NULL | Number | <a href="#contact">`客戶`</a>的 id
+contact | True | NULL | Number | <a href="#contact">客戶</a>的 id
 <!-- 結束分隔線/// -->
 
 
@@ -243,7 +243,7 @@ curl -X POST
 
 ### Response
 
-<a href="#contact">`客戶`</a>
+<a href="#contact">客戶</a>
 
 > 回應的 json 格式
 
@@ -326,7 +326,7 @@ curl -X PUT
 
 ### Response
 
-<a href="#contact">`客戶`</a>
+<a href="#contact">客戶</a>
 
 > 回應的 json 格式
 
@@ -360,7 +360,7 @@ curl -X PUT
 
 Parameter | Description
 --------- | -----------
-id | 客戶的 id
+id | 客戶的 ID
 
 ### Form Data
 
@@ -433,5 +433,5 @@ Http status 為 `204`
 
 Parameter | Description
 --------- | -----------
-id | <a href="#contact">`客戶`</a>的 id
+id | <a href="#contact">客戶</a>的 id
 

@@ -14,7 +14,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#country">`國家`陣列</a>
+data | Array of objects | <a href="#country">國家陣列</a>
 meta | Object | Pagination meta
 
 > 回傳 json 格式
@@ -63,7 +63,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#state">`縣市`陣列</a>
+data | Array of objects | <a href="#state">縣市陣列</a>
 meta | Object | Pagination meta
 
 > 回傳 json 格式
@@ -138,7 +138,7 @@ curl -X GET
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#city">`區`陣列</a>
+data | Array of objects | <a href="#city">區域陣列</a>
 meta | Object | Pagination meta
 
 > 回傳 json 格式

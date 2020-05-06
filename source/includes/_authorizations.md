@@ -4,7 +4,7 @@
 
 取得金鑰，可透過此金鑰執行各種對應帳號具備之系統權限之 api 操作
 
-FirstLine 的 api 請求皆會取得後以下面兩種方式任一驗證 `金鑰` **(access token)**
+FIRST LINE 的 api 請求皆會取得後以下面兩種方式任一驗證 `金鑰` **(access token)**
 
 **Authorization header**
 `Authorization: Bearer eyJhbGciOiJIUzI1NiI...`

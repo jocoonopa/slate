@@ -1,6 +1,6 @@
 # 請求使用說明
 
-`FirstLine API` 是使用 `RESTful` 風格設計的 API，使用到的 HTTP 請求方法共有四種:
+`FIRST LINE API` 是使用 `RESTful` 風格設計的 API，使用到的 HTTP 請求方法共有四種:
 
 - `GET` 方法，請求展示指定資源，即`瀏覽`
 - `POST` 方法，用於提交指定資源的實體，即 `新增`

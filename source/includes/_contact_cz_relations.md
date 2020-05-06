@@ -19,7 +19,7 @@ curl -X GET
 
 > 回傳 json 格式
 
-<a href="#contactczrelation">`客戶動態關聯表格`</a>
+<a href="#contactczrelation">客戶動態關聯表格</a>
 
 ```json
 
@@ -110,9 +110,9 @@ contact | true | NULL | Number | <a href="#contact">客戶</a> 的 id
 
 ### Response
 
-<a href="#contactczrelation">`客戶動態關聯表格`</a>
+<a href="#contactczrelation">客戶動態關聯表格</a>
 
-<a href="#contactczrelationinformation">`客戶動態關聯表格內容`</a>
+<a href="#contactczrelationinformation">客戶動態關聯表格內容</a>
 
 > 回傳 json 格式
 
@@ -229,7 +229,7 @@ value | true | NULL | String | 動態欄位的值
 
 ### Response
 
-<a href="#czrelation">`動態關聯表格`</a>
+<a href="#czrelation">動態關聯表格</a>
 
 > 回傳 json 格式
 

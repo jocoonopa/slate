@@ -71,7 +71,7 @@ description | false | NULL | String | 備註
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Array of objects | <a href="#phone-number">`電話號碼`陣列</a>
+data | Array of objects | <a href="#phone-number">電話號碼陣列</a>
 meta | Object | Pagination meta
 
 <!-- ///開始分隔線 -->
@@ -85,11 +85,11 @@ curl -X GET
 
 ### Response
 
-請參考<a href="#phone-number">`電話號碼`</a>的回應格式
+請參考<a href="#phone-number">電話號碼</a>的回應格式
 
 Property | Type | Description
 -------- | ---- | -----------
-data | Object | <a href="#phone-number">`電話號碼`</a>
+data | Object | <a href="#phone-number">電話號碼</a>
 
 > 回傳 json 格式
 
@@ -178,7 +178,7 @@ curl -X PUT
 
 ### Response
 
-<a href="#phone-number">`電話號碼`</a>
+<a href="#phone-number">電話號碼</a>
 
 > 回傳 json 格式
 

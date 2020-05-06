@@ -1,16 +1,16 @@
 # Webhook
 
-請於 FirstLine 系統填寫您的回呼網址。
+請於 FIRST LINE 系統填寫您的回呼網址。
 
 填寫完成後，客戶、地址、電話、電子郵件信箱有`新增`、`更新`、或是`刪除`的動作發生，
-FirstLine 都會對您填寫的回呼網址進行呼叫，通知異動。
+FIRST LINE 都會對您填寫的回呼網址進行呼叫，通知異動。
 
 ## 驗證
 
 回呼網址建立後系統會自動產生一個 secret 值。
 
-FirstLine 在呼叫回呼網址時，會在 Header `X_FIRSTLINE_SIGNATURE` 附帶簽章，
-回呼網址收到 FirstLine 請求時，應該按照以下步驟進行驗證，確認請求確實來自 FirstLine。
+FIRST LINE 在呼叫回呼網址時，會在 Header `X_FIRSTLINE_SIGNATURE` 附帶簽章，
+回呼網址收到 FIRST LINE 請求時，應該按照以下步驟進行驗證，確認請求確實來自 FIRST LINE
 
 **檢查流程**
 

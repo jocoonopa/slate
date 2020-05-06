@@ -9,7 +9,7 @@ curl -X GET
 
 ### Response
 
-<a href="#cz-col">`動態欄位`</a>
+<a href="#cz-col">動態欄位</a>
 
 > 回傳 json 格式
 
@@ -61,4 +61,4 @@ curl -X GET
 
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
-contact | true | NULL | Number | <a href="#contact">`客戶`</a> 的 id
+contact | true | NULL | Number | <a href="#contact">客戶</a> 的 id
