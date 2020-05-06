@@ -543,7 +543,7 @@
 
 <p>取得金鑰，可透過此金鑰執行各種對應帳號具備之系統權限之 api 操作</p>
 
-<p>FirstLine 的 api 請求皆會取得後以下面兩種方式任一驗證 <code>金鑰</code> <strong>(access token)</strong></p>
+<p>FIRST LINE 的 api 請求皆會取得後以下面兩種方式任一驗證 <code>金鑰</code> <strong>(access token)</strong></p>
 
 <p><strong>Authorization header</strong>
 <code>Authorization: Bearer eyJhbGciOiJIUzI1NiI...</code></p>
@@ -608,7 +608,7 @@
 <h3 id='http-request-3'>Http Request</h3>
 <p><code>POST https://{API_HOST}/api/v1/auth/logout</code></p>
 <h1 id='1e9eb3f03a'>請求使用說明</h1>
-<p><code>FirstLine API</code> 是使用 <code>RESTful</code> 風格設計的 API，使用到的 HTTP 請求方法共有四種:</p>
+<p><code>FIRST LINE API</code> 是使用 <code>RESTful</code> 風格設計的 API，使用到的 HTTP 請求方法共有四種:</p>
 
 <ul>
 <li><code>GET</code> 方法，請求展示指定資源，即<code>瀏覽</code></li>
@@ -683,7 +683,7 @@
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#contact"><code>客戶</code>陣列</a></td>
+<td><a href="#contact">客戶陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -879,7 +879,7 @@
     -H <span class="s2">"Content-Type: application/json"</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1
 </code></pre><h3 id='response-2'>Response</h3>
-<p>請參考<a href="#contact"><code>客戶</code></a>回應格式</p>
+<p>請參考<a href="#contact">客戶</a>回應格式</p>
 
 <table><thead>
 <tr>
@@ -891,7 +891,7 @@
 <tr>
 <td>data</td>
 <td>Object</td>
-<td><a href="#contact"><code>客戶</code></a></td>
+<td><a href="#contact">客戶</a></td>
 </tr>
 </tbody></table>
 
@@ -1027,7 +1027,7 @@
 <td>True</td>
 <td>NULL</td>
 <td>Number</td>
-<td><a href="#contact"><code>客戶</code></a>的 id</td>
+<td><a href="#contact">客戶</a>的 id</td>
 </tr>
 </tbody></table>
 
@@ -1039,7 +1039,7 @@
     <span class="s1">'{"first_name":"abc","last_name":"cde"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact?xxxx
 </code></pre><h3 id='response-3'>Response</h3>
-<p><a href="#contact"><code>客戶</code></a></p>
+<p><a href="#contact">客戶</a></p>
 
 <blockquote>
 <p>回應的 json 格式</p>
@@ -1179,7 +1179,7 @@ id=2, name=&#39;血型&#39;</p>
     <span class="s1">'{"first_name":"First","last_name":"Line"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/2
 </code></pre><h3 id='response-4'>Response</h3>
-<p><a href="#contact"><code>客戶</code></a></p>
+<p><a href="#contact">客戶</a></p>
 
 <blockquote>
 <p>回應的 json 格式</p>
@@ -1215,7 +1215,7 @@ id=2, name=&#39;血型&#39;</p>
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>客戶的 id</td>
+<td>客戶的 ID</td>
 </tr>
 </tbody></table>
 <h3 id='form-data-2'>Form Data</h3>
@@ -1353,7 +1353,7 @@ id=2, name=&#39;血型&#39;</p>
 </thead><tbody>
 <tr>
 <td>id</td>
-<td><a href="#contact"><code>客戶</code></a>的 id</td>
+<td><a href="#contact">客戶</a>的 id</td>
 </tr>
 </tbody></table>
 <h1 id='c4ab0655f7'>動態欄位</h1>
@@ -1388,7 +1388,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#czcol"><code>動態欄位</code>陣列</a></td>
+<td><a href="#czcol">動態欄位陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -1455,7 +1455,7 @@ id=2, name=&#39;血型&#39;</p>
 <td>false</td>
 <td>NULL</td>
 <td>Number</td>
-<td><a href="#czcolcategory"><code>動態欄位分類</code></a> 的 id</td>
+<td><a href="#czcolcategory">動態欄位分類</a> 的 id</td>
 </tr>
 <tr>
 <td>types</td>
@@ -1483,7 +1483,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#czcolcategory"><code>動態欄位分類</code> 陣列</a></td>
+<td><a href="#czcolcategory">動態欄位分類 陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -1583,7 +1583,7 @@ id=2, name=&#39;血型&#39;</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json:Authorization: Bearer eyJhbGciOiJIUzI1NiI..."</span> https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/contact/1/cz-col
 </code></pre><h3 id='response'>Response</h3>
-<p><a href="#cz-col"><code>動態欄位</code></a></p>
+<p><a href="#cz-col">動態欄位</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -1643,7 +1643,7 @@ id=2, name=&#39;血型&#39;</p>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td><a href="#contact"><code>客戶</code></a> 的 id</td>
+<td><a href="#contact">客戶</a> 的 id</td>
 </tr>
 </tbody></table>
 <h1 id='c0b8f3486f'>客戶動態關聯表格</h1><h2 id='3d33539a00'>列出指定客戶關聯紀錄 ([客戶關聯紀錄] 即 [客戶動態關聯表格])</h2>
@@ -1663,7 +1663,7 @@ id=2, name=&#39;血型&#39;</p>
 <p>回傳 json 格式</p>
 </blockquote>
 
-<p><a href="#contactczrelation"><code>客戶動態關聯表格</code></a></p>
+<p><a href="#contactczrelation">客戶動態關聯表格</a></p>
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1759,9 +1759,9 @@ id=2, name=&#39;血型&#39;</p>
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre><h3 id='response-2'>Response</h3>
-<p><a href="#contactczrelation"><code>客戶動態關聯表格</code></a></p>
+<p><a href="#contactczrelation">客戶動態關聯表格</a></p>
 
-<p><a href="#contactczrelationinformation"><code>客戶動態關聯表格內容</code></a></p>
+<p><a href="#contactczrelationinformation">客戶動態關聯表格內容</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -1923,7 +1923,7 @@ id=2, name=&#39;血型&#39;</p>
 
 
 </span></code></pre><h3 id='response-3'>Response</h3>
-<p><a href="#czrelation"><code>動態關聯表格</code></a></p>
+<p><a href="#czrelation">動態關聯表格</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -2220,7 +2220,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#phone-number"><code>電話號碼</code>陣列</a></td>
+<td><a href="#phone-number">電話號碼陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -2234,7 +2234,7 @@ id=2, name=&#39;血型&#39;</p>
     -H <span class="s2">"Content-Type: application/json"</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/245621
 </code></pre><h3 id='response-2'>Response</h3>
-<p>請參考<a href="#phone-number"><code>電話號碼</code></a>的回應格式</p>
+<p>請參考<a href="#phone-number">電話號碼</a>的回應格式</p>
 
 <table><thead>
 <tr>
@@ -2246,7 +2246,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Object</td>
-<td><a href="#phone-number"><code>電話號碼</code></a></td>
+<td><a href="#phone-number">電話號碼</a></td>
 </tr>
 </tbody></table>
 
@@ -2368,7 +2368,7 @@ id=2, name=&#39;血型&#39;</p>
     <span class="s1">'{"type": 2, "number": "0939888999", "extension": ""}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/phone-number/1
 </code></pre><h3 id='response-3'>Response</h3>
-<p><a href="#phone-number"><code>電話號碼</code></a></p>
+<p><a href="#phone-number">電話號碼</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -2497,7 +2497,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#country"><code>國家</code>陣列</a></td>
+<td><a href="#country">國家陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -2569,7 +2569,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#state"><code>縣市</code>陣列</a></td>
+<td><a href="#state">縣市陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -2673,7 +2673,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#city"><code>區</code>陣列</a></td>
+<td><a href="#city">區域陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -2962,7 +2962,7 @@ id=2, name=&#39;血型&#39;</p>
     -H <span class="s2">"Content-Type: application/json"</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/address/1
 </code></pre><h3 id='response-2'>Response</h3>
-<p>請參考<a href="#address"><code>地址</code></a>回應格式</p>
+<p>請參考<a href="#address">地址</a>回應格式</p>
 
 <table><thead>
 <tr>
@@ -2974,7 +2974,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Object</td>
-<td><a href="#address"><code>地址</code></a></td>
+<td><a href="#address">地址</a></td>
 </tr>
 </tbody></table>
 
@@ -3140,7 +3140,7 @@ id=2, name=&#39;血型&#39;</p>
     <span class="s1">'{"address": "仁愛路一段"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/address/1
 </code></pre><h3 id='response-3'>Response</h3>
-<p><a href="#address"><code>地址</code></a></p>
+<p><a href="#address">地址</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -3416,7 +3416,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Array of objects</td>
-<td><a href="#emailcontact"><code>電子信箱</code>陣列</a></td>
+<td><a href="#emailcontact">電子信箱陣列</a></td>
 </tr>
 <tr>
 <td>meta</td>
@@ -3430,7 +3430,7 @@ id=2, name=&#39;血型&#39;</p>
     -H <span class="s2">"Content-Type: application/json"</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/email-contact/1
 </code></pre><h3 id='response-2'>Response</h3>
-<p>請參考<a href="#emailcontact"><code>電子信箱</code></a>回應格式</p>
+<p>請參考<a href="#emailcontact">電子信箱</a>回應格式</p>
 
 <table><thead>
 <tr>
@@ -3442,7 +3442,7 @@ id=2, name=&#39;血型&#39;</p>
 <tr>
 <td>data</td>
 <td>Object</td>
-<td><a href="#emailcontact"><code>電子信箱</code></a></td>
+<td><a href="#emailcontact">電子信箱</a></td>
 </tr>
 </tbody></table>
 
@@ -3504,7 +3504,7 @@ id=2, name=&#39;血型&#39;</p>
     <span class="s1">'{"contact_id":1,"address":"loren18@ortiz.biz","name":"Theresia Zieme"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/email-contact
 </code></pre><h3 id='response-3'>Response</h3>
-<p><a href="#email"><code>電子信箱</code></a></p>
+<p><a href="#email">電子信箱</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -3581,7 +3581,7 @@ id=2, name=&#39;血型&#39;</p>
     <span class="s1">'{"name":"Sharon"}'</span>
     https://<span class="o">{</span>API_HOST<span class="o">}</span>/api/v1/email-contact/1
 </code></pre><h3 id='response-4'>Response</h3>
-<p><a href="#email"><code>電子信箱</code></a></p>
+<p><a href="#email">電子信箱</a></p>
 
 <blockquote>
 <p>回傳 json 格式</p>
@@ -5378,15 +5378,15 @@ id=2, name=&#39;血型&#39;</p>
 <h3 id='http-request-10'>Http Request</h3>
 <p><code>GET https://{API_DOMAIN}/api/v1/subcategory</code></p>
 <h1 id='webhook'>Webhook</h1>
-<p>請於 FirstLine 系統填寫您的回呼網址。</p>
+<p>請於 FIRST LINE 系統填寫您的回呼網址。</p>
 
 <p>填寫完成後，客戶、地址、電話、電子郵件信箱有<code>新增</code>、<code>更新</code>、或是<code>刪除</code>的動作發生，
-FirstLine 都會對您填寫的回呼網址進行呼叫，通知異動。</p>
+FIRST LINE 都會對您填寫的回呼網址進行呼叫，通知異動。</p>
 <h2 id='99477b1e8e'>驗證</h2>
 <p>回呼網址建立後系統會自動產生一個 secret 值。</p>
 
-<p>FirstLine 在呼叫回呼網址時，會在 Header <code>X_FIRSTLINE_SIGNATURE</code> 附帶簽章，
-回呼網址收到 FirstLine 請求時，應該按照以下步驟進行驗證，確認請求確實來自 FirstLine。</p>
+<p>FIRST LINE 在呼叫回呼網址時，會在 Header <code>X_FIRSTLINE_SIGNATURE</code> 附帶簽章，
+回呼網址收到 FIRST LINE 請求時，應該按照以下步驟進行驗證，確認請求確實來自 FIRST LINE</p>
 
 <p><strong>檢查流程</strong></p>
 
@@ -5556,7 +5556,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>state</td>
 <td>Object</td>
-<td><a href="#city"><code>縣市</code></a></td>
+<td><a href="#city">縣市</a></td>
 </tr>
 <tr>
 <td>state_id</td>
@@ -5566,7 +5566,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>country</td>
 <td>Object</td>
-<td><a href="#country"><code>國家</code></a></td>
+<td><a href="#country">國家</a></td>
 </tr>
 <tr>
 <td>country_id</td>
@@ -5576,7 +5576,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>city</td>
 <td>Object</td>
-<td><a href="#city"><code>區</code></a></td>
+<td><a href="#city">區</a></td>
 </tr>
 <tr>
 <td>city_id</td>
@@ -5702,12 +5702,12 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>profile</td>
 <td>Object</td>
-<td><a href="#profile"><code>客戶個資物件</code></a></td>
+<td><a href="#profile">客戶個資物件</a></td>
 </tr>
 <tr>
 <td>sponsor</td>
 <td>Object</td>
-<td><a href="#sponsor"><code>業主</code></a></td>
+<td><a href="#sponsor">業主</a></td>
 </tr>
 <tr>
 <td>sponsor_id</td>
@@ -5722,7 +5722,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>email_contacts</td>
 <td>Array of objects</td>
-<td><a href="#emailcontact"><code>客戶電子信箱</code>陣列</a></td>
+<td><a href="#emailcontact">客戶電子信箱陣列</a></td>
 </tr>
 <tr>
 <td>fbs</td>
@@ -5737,17 +5737,17 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>cz_cols</td>
 <td>Array of objects</td>
-<td><a href="#cz-col"><code>客戶的動態欄位</code>陣列</a></td>
+<td><a href="#cz-col">客戶的動態欄位陣列</a></td>
 </tr>
 <tr>
 <td>tags</td>
 <td>Array of objects</td>
-<td><a href="#contact-tag"><code>標籤</code>陣列</a></td>
+<td><a href="#contact-tag">標籤陣列</a></td>
 </tr>
 <tr>
 <td>disturb_setting</td>
 <td>Object</td>
-<td><a href="#disturb-setting"><code>勿擾</code></a></td>
+<td><a href="#disturb-setting">勿擾</a></td>
 </tr>
 </tbody></table>
 <h2 id='profile'>客戶個資物件 (Profile)</h2>
@@ -5766,7 +5766,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>phones</td>
 <td>Array of object</td>
-<td><a href="#phone-number"><code>電話</code>陣列</a></td>
+<td><a href="#phone-number">電話陣列</a></td>
 </tr>
 </tbody></table>
 <h2 id='emailcontact'>電子信箱 (EmailContact)</h2>
@@ -5785,7 +5785,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>contact_id</td>
 <td>Number</td>
-<td>所屬 <a href="#contact"><code>客戶</code></a> 的id</td>
+<td>所屬 <a href="#contact">客戶</a> 的id</td>
 </tr>
 <tr>
 <td>address</td>
@@ -5854,7 +5854,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>category</td>
 <td>Object</td>
-<td><a href="#category"><code>主分類</code></a></td>
+<td><a href="#category">主分類</a></td>
 </tr>
 <tr>
 <td>creater_id</td>
@@ -5864,7 +5864,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>creater</td>
 <td>Object</td>
-<td>建立此動態欄位的 <a href="#employee"><code>員工</code></a></td>
+<td>建立此動態欄位的 <a href="#employee">員工</a></td>
 </tr>
 </tbody></table>
 <h2 id='czcolcategory'>動態欄位分類 (CzColCategory)</h2>
@@ -5898,7 +5898,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>cols</td>
 <td>Array of objects</td>
-<td><a href="#czcol"><code>動態欄位</code></a></td>
+<td><a href="#czcol">動態欄位</a></td>
 </tr>
 </tbody></table>
 <h2 id='contactczrelation'>客戶動態關聯表格 (ContactCzRelation)</h2>
@@ -5912,22 +5912,22 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>id</td>
 <td>Number</td>
-<td><code>客戶動態關聯表格</code> id</td>
+<td>客戶動態關聯表格 id</td>
 </tr>
 <tr>
 <td>relation_id</td>
 <td>Number</td>
-<td><a href="#czcolcategory"><code>動態欄位分類</code></a> 的 id</td>
+<td><a href="#czcolcategory">動態欄位分類</a> 的 id</td>
 </tr>
 <tr>
 <td>relation_name</td>
 <td>String</td>
-<td><a href="#czcolcategory"><code>動態欄位分類</code></a> 的名稱</td>
+<td><a href="#czcolcategory">動態欄位分類</a> 的名稱</td>
 </tr>
 <tr>
 <td>information</td>
 <td>Array of Objects</td>
-<td><a href="#contactczrelationinformation"><code>客戶動態關聯表格內容</code></a> 的陣列</td>
+<td><a href="#contactczrelationinformation">客戶動態關聯表格內容</a> 的陣列</td>
 </tr>
 </tbody></table>
 <h2 id='contactczrelationinformation'>客戶動態關聯表格內容 (ContactCzRelationInformation)</h2>
@@ -5941,22 +5941,22 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>id</td>
 <td>Number</td>
-<td><code>客戶動態關聯表格內容</code>的 id</td>
+<td>客戶動態關聯表格內容的 id</td>
 </tr>
 <tr>
 <td>value</td>
 <td>String</td>
-<td><code>客戶動態關聯表格內容</code>的值</td>
+<td>客戶動態關聯表格內容的值</td>
 </tr>
 <tr>
 <td>col_id</td>
 <td>Number</td>
-<td><a href="#czcol"><code>動態欄位</code> </a>的 id</td>
+<td><a href="#czcol">動態欄位 </a>的 id</td>
 </tr>
 <tr>
 <td>col_name</td>
 <td>String</td>
-<td><a href="#czcol"><code>動態欄位</code> </a>的名稱</td>
+<td><a href="#czcol">動態欄位 </a>的名稱</td>
 </tr>
 </tbody></table>
 <h2 id='contact-tag'>客戶標籤 (Contact Tag)</h2>
@@ -6068,7 +6068,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>job_title</td>
 <td>Object</td>
-<td><a href="#job-title"><code>職稱</code></a></td>
+<td><a href="#job-title">職稱</a></td>
 </tr>
 <tr>
 <td>department_id</td>
@@ -6078,7 +6078,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>department</td>
 <td>Object</td>
-<td><a href="#department"><code>部門</code></a></td>
+<td><a href="#department">部門</a></td>
 </tr>
 <tr>
 <td>extension_id</td>
@@ -6088,12 +6088,12 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>extension</td>
 <td>Object</td>
-<td><a href="#extension"><code>分機</code></a></td>
+<td><a href="#extension">分機</a></td>
 </tr>
 <tr>
 <td>profile</td>
 <td>Object</td>
-<td><a href="#profile"><code>客戶個資</code></a></td>
+<td><a href="#profile">客戶個資</a></td>
 </tr>
 <tr>
 <td>is_active</td>
@@ -6118,7 +6118,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>group</td>
 <td>Object</td>
-<td><a href="#employee-group"><code>員工群組</code></a></td>
+<td><a href="#employee-group">員工群組</a></td>
 </tr>
 <tr>
 <td>is_immortal</td>
@@ -6133,7 +6133,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>cti_agent</td>
 <td>Object</td>
-<td><a href="#cti-agent"><code>電話專員</code></a></td>
+<td><a href="#cti-agent">電話專員</a></td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -6216,7 +6216,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>employee_id</td>
 <td>Number</td>
-<td><a href="#employee"><code>員工</code></a></td>
+<td><a href="#employee">員工</a></td>
 </tr>
 <tr>
 <td>employee</td>
@@ -6245,7 +6245,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>employee</td>
 <td>Object</td>
-<td><a href="#employee"><code>員工</code></a></td>
+<td><a href="#employee">員工</a></td>
 </tr>
 <tr>
 <td>group_id</td>
@@ -6255,7 +6255,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>group</td>
 <td>Object</td>
-<td><a href="#employee-group"><code>員工群組</code></a></td>
+<td><a href="#employee-group">員工群組</a></td>
 </tr>
 </tbody></table>
 <h2 id='employee-group'>員工群組 (Employee Group)</h2>
@@ -6289,12 +6289,12 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>supervisor</td>
 <td>Object</td>
-<td>督導，格式為<a href="#employee"><code>員工</code></a></td>
+<td>督導，格式為<a href="#employee">員工</a></td>
 </tr>
 <tr>
 <td>members</td>
 <td>Array of object</td>
-<td>群組成員，格式為<a href="#employee"><code>員工</code></a>的陣列</td>
+<td>群組成員，格式為<a href="#employee">員工</a>的陣列</td>
 </tr>
 </tbody></table>
 <h2 id='deaprtment'>部門 (Deaprtment)</h2>
@@ -6421,7 +6421,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>contact</td>
 <td>Object</td>
-<td><a href="#contact"><code>客戶</code></a></td>
+<td><a href="#contact">客戶</a></td>
 </tr>
 <tr>
 <td>contact_id</td>
@@ -6431,7 +6431,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>sub_category</td>
 <td>Object</td>
-<td><a href="#sub-category"><code>子分類</code></a></td>
+<td><a href="#sub-category">子分類</a></td>
 </tr>
 <tr>
 <td>sub_category_id</td>
@@ -6441,7 +6441,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>creater</td>
 <td>Object</td>
-<td><a href="#employee">建立此工單的<code>員工</code></a></td>
+<td><a href="#employee">建立此工單的員工</a></td>
 </tr>
 <tr>
 <td>handler_id</td>
@@ -6451,7 +6451,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>handler</td>
 <td>Object</td>
-<td><a href="#employee">負責此工單的<code>員工</code></a></td>
+<td><a href="#employee">負責此工單的員工</a></td>
 </tr>
 <tr>
 <td>sponsor_id</td>
@@ -6461,7 +6461,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>sponsor</td>
 <td>Object</td>
-<td><a href="#sponsor">此工單所屬的<code>業主</code></a></td>
+<td><a href="#sponsor">此工單所屬的業主</a></td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -6505,12 +6505,12 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>creater_id</td>
 <td>Number</td>
-<td>建立此狀態細項的<code>員工</code> id</td>
+<td>建立此狀態細項的員工 id</td>
 </tr>
 <tr>
 <td>creater</td>
 <td>Object</td>
-<td><a href="#employee">建立此狀態細項的<code>員工</code></a></td>
+<td><a href="#employee">建立此狀態細項的員工</a></td>
 </tr>
 </tbody></table>
 <h2 id='category'>主分類 (Category)</h2>
@@ -6539,7 +6539,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>children</td>
 <td>Array of objects</td>
-<td><a href="#sub-category"><code>子分類</code>陣列</a></td>
+<td><a href="#sub-category">子分類陣列</a></td>
 </tr>
 </tbody></table>
 <h2 id='subcategory'>子分類 (SubCategory)</h2>
@@ -6568,7 +6568,7 @@ body 為 &#39;12345678&#39;
 <tr>
 <td>category</td>
 <td>Object</td>
-<td><a href="#category"><code>母分類</code></a></td>
+<td><a href="#category">母分類</a></td>
 </tr>
 <tr>
 <td>category_id</td>
@@ -6616,7 +6616,7 @@ body 為 &#39;12345678&#39;
 </tr>
 </tbody></table>
 <h1 id='d0ef08b973'>錯誤</h1>
-<p>FirstLine API 使用以下錯誤代碼</p>
+<p>FIRST LINE API 使用以下錯誤代碼</p>
 
 <table><thead>
 <tr>
