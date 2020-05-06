@@ -2,7 +2,7 @@
 title: API Reference
 
 toc_footers:
-  - <a href='https://www.firstline.cc'>Powered by FirstLine</a>
+  - <a href='https://www.firstline.cc'>Powered by FIRST LINE</a>
 
 includes:
   - authorizations
