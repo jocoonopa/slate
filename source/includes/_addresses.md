@@ -1,4 +1,16 @@
 # 聯絡地址
+## 通用資料
+此區為聯絡地址欄位對應資料。
+
+### 類別 type
+名稱  | 值
+-------- | ----
+住家  | 0
+通訊 | 1
+帳單 | 2
+郵寄 | 3
+戶籍 | 4
+其他 | 5
 
 ## 搜尋聯絡地址
 
@@ -111,7 +123,7 @@ curl -X GET
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
 contact_id | false | NULL | Number | 客戶的 id
-type | false | NULL | Number | 0:住家,1:郵寄,2:帳單,3:快遞,4:現居,5:其他
+type | false | NULL | Number | 0:住家,1:通訊,2:帳單,3:郵寄,4:戶籍,5:其他
 address | false | NULL | String | 地址
 country_id | false | NULL | Number | 國家的id
 state_id | false | NULL | Number | 城市的id

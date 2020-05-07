@@ -208,7 +208,7 @@ phone_number | true | NULL | Number | 電話號碼的id
 
 Parameter | Required | Default | Type | Description
 --------- | -------- | ------- | ---- | -----------
-contact_id | true | NULL | Number | 客戶的 **id**
+contact_id | true | NULL | Number | 客戶的 id
 type | false | NULL | Number | 0: 住家, 1: 公司, 2: 手機, 3: 傳真, 4: 其他
 number | false | NULL | String | 電話號碼
 extension | false | NULL | String | 分機號碼

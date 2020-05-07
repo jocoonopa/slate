@@ -62,7 +62,7 @@
 
 ## PUT 請求示意圖
 
-由於 **FirstLine API** 不支援直接使用 Http `PUT` 請求方法，
+由於 **FIRST LINE API** 不支援直接使用 Http `PUT` 請求方法，
 因此需要進行 `PUT` 請求時，請使用 `POST` 替代，
 並且附帶參數 `_method="put"`。
 

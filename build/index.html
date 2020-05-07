@@ -249,6 +249,9 @@
             <a href="#451c27e169" class="toc-h1 toc-link" data-title="客戶">客戶</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#e53c346fd2" class="toc-h2 toc-link" data-title="通用資料">通用資料</a>
+                  </li>
+                  <li>
                     <a href="#d00fae2193" class="toc-h2 toc-link" data-title="搜尋客戶">搜尋客戶</a>
                   </li>
                   <li>
@@ -353,6 +356,9 @@
           <li>
             <a href="#5b8574054f" class="toc-h1 toc-link" data-title="聯絡地址">聯絡地址</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#e53c346fd2" class="toc-h2 toc-link" data-title="通用資料">通用資料</a>
+                  </li>
                   <li>
                     <a href="#38f36cb73f" class="toc-h2 toc-link" data-title="搜尋聯絡地址">搜尋聯絡地址</a>
                   </li>
@@ -650,7 +656,7 @@
 
 <p><code>PUT</code> 請求方法較為特殊，請參考下方區塊之說明。</p>
 <h2 id='put'>PUT 請求示意圖</h2>
-<p>由於 <strong>FirstLine API</strong> 不支援直接使用 Http <code>PUT</code> 請求方法，
+<p>由於 <strong>FIRST LINE API</strong> 不支援直接使用 Http <code>PUT</code> 請求方法，
 因此需要進行 <code>PUT</code> 請求時，請使用 <code>POST</code> 替代，
 並且附帶參數 <code>_method=&quot;put&quot;</code>。</p>
 
@@ -665,7 +671,25 @@
     </span><span class="s2">"last_name"</span><span class="p">:</span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"birth_at"</span><span class="p">:</span><span class="s2">"1999-09-09"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='451c27e169'>客戶</h1><h2 id='d00fae2193'>搜尋客戶</h2>
+</span></code></pre><h1 id='451c27e169'>客戶</h1><h2 id='e53c346fd2'>通用資料</h2>
+<p>此區為客戶欄位對應資料。</p>
+<h3 id='gender'>性別 gender</h3>
+<table><thead>
+<tr>
+<th>名稱</th>
+<th>值</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>男</td>
+<td>0</td>
+</tr>
+<tr>
+<td>女</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h2 id='d00fae2193'>搜尋客戶</h2>
 <p><code>GET https://{API_HOST}/api/v1/contact?xxxx</code></p>
 
 <p>考根據下方的 <strong>Query Parameters</strong> 表單的參數進行過濾篩選</p>
@@ -872,7 +896,10 @@
 </tbody></table>
 
 <p><strong>範例</strong>
-<code>[{&quot;id&quot;:1, &quot;op&quot;:&quot;&gt;&quot;, &quot;val&quot;: 10}, {&quot;id&quot;:1, &quot;op&quot;:&quot;&lt;&quot;, &quot;val&quot;: 20}]</code></p>
+<code>[
+    {&quot;id&quot;:1, &quot;op&quot;:&quot;&gt;&quot;, &quot;val&quot;: 10},
+    {&quot;id&quot;:1, &quot;op&quot;:&quot;&lt;&quot;, &quot;val&quot;: 20}
+]</code></p>
 
 <!-- ///開始分隔線 -->
 <h2 id='e0c4660cf0'>取得客戶</h2><pre class="highlight shell tab-shell"><code>curl -X get
@@ -1372,7 +1399,7 @@ id=2, name=&#39;血型&#39;</p>
 <h2 id='5e13432c83'>動態關聯表格 (關聯紀錄)</h2>
 <p>即從原本的表單添加 &quot;一對多&quot; 的關聯，例如 <code>客戶</code> 的 <code>購買紀錄</code>，即屬於 <strong>動態關聯表格</strong></p>
 <h2 id='5ffa6fd220'>目前套用在 [客戶] 以及 [工單]</h2>
-<p>目前 FirstLine 的 <strong>客戶</strong> 以及 <strong>工單</strong> 皆支援 <strong>動態欄位表單</strong> 和 <strong>動態關聯表格</strong></p>
+<p>目前 FIRST LINE 的 <strong>客戶</strong> 以及 <strong>工單</strong> 皆支援 <strong>動態欄位表單</strong> 和 <strong>動態關聯表格</strong></p>
 <h2 id='8485ba0e1e'>目前系統所有的動態欄位</h2>
 <p>目前系統所有的動態欄位，可根據 <code>category_id</code>, <code>types</code> 進行過濾篩選</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
@@ -2418,7 +2445,7 @@ id=2, name=&#39;血型&#39;</p>
 <td>true</td>
 <td>NULL</td>
 <td>Number</td>
-<td>客戶的 <strong>id</strong></td>
+<td>客戶的 id</td>
 </tr>
 <tr>
 <td>type</td>
@@ -2778,7 +2805,41 @@ id=2, name=&#39;血型&#39;</p>
 <td>郵遞區名</td>
 </tr>
 </tbody></table>
-<h1 id='5b8574054f'>聯絡地址</h1><h2 id='38f36cb73f'>搜尋聯絡地址</h2>
+<h1 id='5b8574054f'>聯絡地址</h1><h2 id='e53c346fd2'>通用資料</h2>
+<p>此區為聯絡地址欄位對應資料。</p>
+<h3 id='type'>類別 type</h3>
+<table><thead>
+<tr>
+<th>名稱</th>
+<th>值</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>住家</td>
+<td>0</td>
+</tr>
+<tr>
+<td>通訊</td>
+<td>1</td>
+</tr>
+<tr>
+<td>帳單</td>
+<td>2</td>
+</tr>
+<tr>
+<td>郵寄</td>
+<td>3</td>
+</tr>
+<tr>
+<td>戶籍</td>
+<td>4</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>5</td>
+</tr>
+</tbody></table>
+<h2 id='38f36cb73f'>搜尋聯絡地址</h2>
 <p>搜尋聯絡地址</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET
     -H <span class="s2">"Content-Type: application/json"</span>
@@ -2899,7 +2960,7 @@ id=2, name=&#39;血型&#39;</p>
 <td>false</td>
 <td>NULL</td>
 <td>Number</td>
-<td>0:住家,1:郵寄,2:帳單,3:快遞,4:現居,5:其他</td>
+<td>0:住家,1:通訊,2:帳單,3:郵寄,4:戶籍,5:其他</td>
 </tr>
 <tr>
 <td>address</td>
